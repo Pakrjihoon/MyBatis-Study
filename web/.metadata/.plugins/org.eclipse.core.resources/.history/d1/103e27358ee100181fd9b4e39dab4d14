@@ -1,0 +1,267 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>회원가입</title>
+	<%@ include file="/WEB-INF/template/link.jsp" %>
+    <link rel="stylesheet" href="/css/join.css" />
+
+</head>
+<body>
+<div id="header">
+    <h1><a href="/index.jsp"><img src="/img/logo.png" width="40"/><strong>ODEL1</strong> Board</a></h1>
+</div>
+<div id="content">
+    <div class="aux">
+        <h2 class="title"><i class="fas fa-hat-wizard"></i> 회원가입 폼</h2>
+        <div id="joinBox">
+            <form method="post" action="/index.jsp" encytype="">
+                <fieldset>
+                    <legend class="screen_out">회원가입폼</legend>
+                    <div class="row">
+                        <label class="label" for="id">아이디</label>
+                        <input id="id" name="id"
+                               autocomplete="off"
+                               placeholder="영어,숫자로 4~20자 입력"
+                               title="영어,숫자로 4~20자 입력"
+                               pattern="[\w]{4,20}"
+                               required/>
+                        <div class="msg id">아이디를 입력해주세요.</div>
+                    </div><!--//row-->
+                    <div class="row">
+                        <label class="label" for="nickname">별 명</label>
+                        <input id="nickname"
+                               required pattern="[ㄱ-힣|0-9]{1,10}"
+                               placeholder="10자 내로 한글,숫자 입력"
+                               title="10자 내로 한글,숫자 입력"
+                               name="nickname"/>
+                        <div class="msg nickname ok">좋은 별명입니다.</div>
+                    </div><!--//row-->
+                    <div class="row">
+                        <label class="label" for="pwd">비밀번호</label>
+                        <input type="password" id="pwd"
+                               required pattern="[\w]{4,32}"
+                               placeholder="4~32자로 입력"
+                               title="4~32자로 입력"
+                               name="pwd"/>
+                        <div class="msg pwd"></div>
+                    </div><!--//row-->
+                    <div class="row">
+                        <label class="label" for="confirm">비밀번호 확인</label>
+                        <input type="password" id="confirm"
+                               pattern="[\w]{4,32}"
+                               required placeholder="위와 동일하게 입력"
+                               title="위와 동일하게 입력"/>
+                        <div class="msg confirm"></div>
+                    </div><!--//row-->
+                    <div class="row">
+                        <span class="label" for="birthDate">생년월일</span>
+                        <p id="birthDate">
+                            <label>
+                                <input type="text" id="year" name="year"
+                                       maxlength="4"
+                                       title="태어난 년도를 입력"
+                                       placeholder="년(4자리)"/></label>
+                            <label>
+                                <input type="text" id="month" name="month"
+                                       maxlength="2"
+                                       title="태어난 월을 입력"
+                                       placeholder="월"/>
+                            </label>
+                            <label>
+                                <input type="text" id="date"
+                                       name="date"
+                                       title="태어난 일을 입력"
+                                       maxlength="2"
+                                       placeholder="일"/>
+                            </label>
+                        </p>
+                        <div class="msg birth"></div>
+                    </div><!--//row-->
+                    <div class="row" id="profileRow">
+                        <span class="label">프로필사진</span>
+                        <div id="profileBox" class="fas fa-user-circle no_image">
+                        <img src="/profile/jw.jpg" width="140" height="140" id="profileImg"/>
+                        <label class="fas fa-camera">
+                            <input type="file" name="profile" id="profile"/>
+                        </label>
+                            <button type="button" class="delete fas fa-times"><span class="screen_out">삭제</span></button>
+                        </div><!-- //profileBox -->
+                        <div class="msg profile">zz</div>
+                    </div><!--//profileRow -->
+                    <div class="box_btn">
+                        <button class="btn" type="submit"><i class="fas fa-sign-in-alt"></i> 회원가입</button>
+                        <button class="btn" type="reset"><i class="fas fa-redo"></i> 초기화</button>
+                        <a class="btn" href="/index.jsp"><i class="far fa-list-alt"></i> index으로</a>
+                    </div><!--//box_btn -->
+                </fieldset>
+            </form>
+        </div><!--// joinBox -->
+    </div>
+</div>
+<%@ include file="/WEB-INF/template/footer.jsp" %>
+<script src="/js/jquery.js"></script>
+<script src="/js/fix-footer.js"></script>
+<script>
+	var $joinForm = $("#joinBox>form");
+    //만약 아이디가 첫 글자는 영어로, 영어와 숫자로 4~20글자까지라면
+    var idReg = /^[a-z\A-Z][\w]{3,19}$/;
+    
+	//비밀번호가 4~32자로 영어,숫자
+    var pwdReg = /^[\w]{4,32}$/;
+    
+    // id msg
+    var $idMsg = $(".msg.id");
+    
+    // id 유효성검사가 되었는지 확인하는 변수
+    var isValidId = false;
+    
+    //pwd
+    var $pwd = $("#pwd");
+    
+    //pwd msg
+    var $pwdMsg = $(".msg.pwd");
+    
+    //id
+    var $id = $("#id");
+    // 유저가 이전에 입력한 id값
+    var oldId = "";
+    
+    //profile 
+    var $profile = $("#profile");
+    var profileReg = /^image/;
+    //profile msg 
+    var $profileMsg = $(".msg.profile");
+    
+    // profile 사진이 변경되면 
+    $profile.change(function() {
+    	//jquery객체에서 순수자바스크립트요소객체 얻기
+    	var profile = $profile.get(0);
+    	
+    	//input type=file 요소(순수자바스크립트)는 무조건
+    	//files 배열을 가지고 있습니다.
+    	
+    	//한 개의 파일
+    	var file = profile.files[0];
+    	
+    	//File 객체의 속성
+    	//- type : MIME( image/jpeg, audio/mp3, video/mp4 ...)
+    	//- name : 파일명
+    	//- lastModified : 최종 수정일
+    	//- size : 파일 크기
+    	console.log(file);
+    	if(file.size<=0) {
+    		$profileMsg.removeClass("ok").text("파일을 선택해주세요");
+    	} //if end
+    	// 이미지인지 확인
+    	if(!profileReg.test(file.type)) {
+    		$profileMsg.removeClass("ok").text("이미지 파일을 선택해주세요");
+    	} else {
+    		$profileMsg.addClass("ok").text("좋은 사진입니다.");
+    	} // if~else end
+		//여기에 넘어왔다는 뜻은 유저가 선택한 파일이 
+		// 1바이트 이상의 크기이고 이미지 파일이라는 뜻입니다.
+		
+    	// ajax로 넘길 폼을 생성하고
+    	var form = new FormData();
+    	
+    	// 우리가 선택한 파일을 붙임
+    	form.append("type","H"); // type=H 일반적인 데이터
+    	// 1) 파라미터명, 2) 파일 3) 파일명
+    	form.append("profile",file,file.name);
+    	
+    	//multipart/form-data로 ajax처리
+    	$.ajax({
+    		url:"/ajax/uploadImage.jsp",
+    		dataType:"json",
+    		type: "POST",
+    		processData:false,//multipart/form-data
+    		contentType:false,//multipart/form-data
+    		data:form,
+    		error:function() {
+    			alert("점검");
+    		},
+    		success:function(json) {
+    			console.log(json);
+    		}
+    	}); //ajax() end
+    });//change() end
+    
+    //비밀번호 유효성검사하는 함수
+    function checkPwd() {
+    	if(pwdReg.test($pwd.val())) {
+    		$pwdMsg.addClass("ok").text("좋은 비밀번호 입니다.");
+    		return true;
+    	} else {
+    		$pwdMsg.removeClass("ok").text("영어, 숫자 4~32글자로 입력해주세요.");
+    		return false;
+    	} // if~else end
+    } //checkPwd() end
+    
+    //아이디 유효성검사 함수
+    function checkId() {
+  
+        //유저가 입력한 값을 얻어옴
+        var value = $id.val();
+        
+        if(oldId!=value){
+        	// 현재 글자를 이전 글자로 업데이트
+        	oldId=value;
+        	
+       	 	if(idReg.test(value)) {
+       	    	//체크를 다시 시작하니까 무조건 false로
+       	    	isValid = false;
+       	    	
+        		//ajax 작동시작
+        		$idMsg.removeClass("ok").text("확인중...");
+        		
+        		// application/x-www-form-urlencoded
+        		$.ajax({
+        			url:"/ajax/checkId.jsp",
+        			dataType:"json",
+        			data:{"id":value},
+        			error:function() {
+        				alert("서버 점검중!");
+        			},
+        			success: function(json) {
+        				if(json.count==0) {
+        					isValidId = true;
+        					$idMsg.addClass("ok").text("아주 좋은 아이디입니다.");
+        				}else {
+        					isValidId = false;
+        					$idMsg.removeClass("ok").text("이미 사용중이거나 탈퇴한 아이디입니다.");
+        				}//if~else end
+        			} // success end
+        		}); // $.ajax() end
+        	} else  {
+           	 	$msg.removeClass("ok").text("영어, 숫자로 4~20글자로 입력해주세요.")
+        	} //if~else end
+        }
+    }
+    
+    // 아이디 유효성검사용 함수
+    $id.keyup(checkId);
+    $pwd.keyup(checkPwd);
+   
+    //focus가 넘어갈때 id 유효성검사를 합니다.
+    $id.blur(checkId);
+    
+	$joinForm.submit(function () {
+		
+		if(!isValidId) {
+			$idMsg.removeClass("ok").text("첫 글자를 영어로 , 영어,숫자 4~20글자로 입력하세요").focus();
+			return false;
+		} // if end
+		
+		if(!checkPwd()){
+			return false;			
+		} // if end
+	}); // submit() end 
+	
+    var $msg = $(".msg.id");
+	
+</script>
+</body>
+</html>

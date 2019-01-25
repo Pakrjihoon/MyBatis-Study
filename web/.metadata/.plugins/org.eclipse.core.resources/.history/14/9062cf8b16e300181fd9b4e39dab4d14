@@ -1,0 +1,22 @@
+<%@page import="org.bjd.model1.dao.MembersDAO"%>
+<%@page import="org.bjd.model1.vo.Member"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<% 
+
+// 파라미터 : id , password
+
+String id = request.getParameter("id");
+String password = request.getParameter("password");
+
+Member member = new Member(id, password);
+
+member = MembersDAO.selectLogin(member);
+session.setAttribute("loginMember", member);
+
+//request(요청)의 header의 referer속성이
+//바로 이전페이지
+String url = request.getHeader("referer");
+System.out.println(url);
+response.sendRedirect("index.jsp");
+%>

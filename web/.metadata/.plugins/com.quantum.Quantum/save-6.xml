@@ -1,0 +1,322 @@
+<?xml version="1.0" ?>
+<SAVED_DATA>
+	<bookmarks>
+		<jdbcDriver className="org.apache.derby.jdbc.EmbeddedDriver" name="org.apache.derby.jdbc.EmbeddedDriver" type="DERBY" version="">
+			<jar fileName="C:/Users/Administrator/Downloads/eclipse-jee-photon-R-win32-x86_64/eclipse/plugins/com.quantum.derby_3.3.10/lib/derby.jar" />
+		</jdbcDriver>
+		<jdbcDriver className="oracle.jdbc.OracleDriver" name="Oracle JDBC driver" type="ORACLE" version="11.2.0.2.0">
+			<jar fileName="C:\oraclexe\app\oracle\product\11.2.0\server\jdbc\lib\ojdbc6.jar" />
+		</jdbcDriver>
+		<bookmark>
+			<name>HR</name>
+			<username>hr</username>
+			<password>1111</password>
+			<prompt>false</prompt>
+			<connect>jdbc:oracle:thin:@localhost:1521:xe</connect>
+			<autoCommit>true</autoCommit>
+			<autoCommitPreference>Always True</autoCommitPreference>
+			<autoCommitIgnoreView>false</autoCommitIgnoreView>
+			<quoteAll>false</quoteAll>
+			<sendQueryAsIs>false</sendQueryAsIs>
+			<stripNewline>false</stripNewline>
+			<shutdownOnDisconnect>false</shutdownOnDisconnect>
+			<defaultEncoding />
+			<driver>oracle.jdbc.OracleDriver</driver>
+			<type>ORACLE</type>
+			<substituteVariables>false</substituteVariables>
+			<variablesRegexp>\$\{(.*?)\}</variablesRegexp>
+			<driverLocation>C:\oraclexe\app\oracle\product\11.2.0\server\jdbc\lib\ojdbc6.jar</driverLocation>
+			<Other_Schemas schemaRule="useDefault" />
+			<quickList />
+			<queryList>
+				<query>
+					<queryString>select e.employee_id 사번,e.first_name||' '||e.last_name 사원성명, 
+j.job_title 직업명, m.first_name ||' '||m.last_name 상사명
+from employees e, employees m, jobs j
+where e.manager_id = m.employee_id(+)
+and e.job_id = j.job_id
+and e.department_id = (select department_id from departments 
+							where department_name = 'Finance')
+order by 3 desc ,2 desc</queryString>
+				</query>
+				<query>
+					<queryString>select e.employee_id 사번,e.first_name||' '||e.last_name 사원성명, 
+j.job_title 직업명, m.first_name ||' '||m.last_name 상사명
+from employees e, employees m, jobs j
+where e.manager_id = m.employee_id(+)
+and e.job_id = j.job_id
+and e.department_id = (select department_id from departments 
+							where department_name = 'Finance')
+order by 3 desc ,1</queryString>
+				</query>
+				<query>
+					<queryString>select e.employee_id 사번,e.first_name||' '||e.last_name 사원성명, 
+j.job_title 직업명, m.first_name ||' '||m.last_name 상사명
+from employees e, employees m, jobs j
+where e.manager_id = m.employee_id(+)
+and e.job_id = j.job_id
+and e.department_id = (select department_id from departments 
+							where department_name = 'Finance')
+order by 3 desc ,3</queryString>
+				</query>
+				<query>
+					<queryString>select e.employee_id 사번,e.first_name||' '||e.last_name 사원성명, 
+j.job_title 직업명, m.first_name ||' '||m.last_name 상사명
+from employees e, employees m, jobs j
+where e.manager_id = m.employee_id(+)
+and e.job_id = j.job_id
+and e.department_id = (select department_id from departments 
+							where department_name = 'Finance')
+order by 3 desc ,4</queryString>
+				</query>
+				<query>
+					<queryString>select e.employee_id 사번,e.first_name||' '||e.last_name 사원성명, 
+j.job_title 직업명, m.first_name ||' '||m.last_name 상사명
+from employees e, employees m, jobs j
+where e.manager_id = m.employee_id(+)
+and e.job_id = j.job_id
+and e.department_id = (select department_id from departments 
+							where department_name = 'Finance')
+order by 3 desc ,2</queryString>
+				</query>
+				<query>
+					<queryString>select employee_id 사번, first_name||' '||last_name 이름 
+from employees</queryString>
+				</query>
+				<query>
+					<queryString>select employee_id 사번, first_name||' '||last_name 이름, 
+to_char(salary*12,'$999,999,999') 본봉, nvl(commission_pct,0) 
+from employees</queryString>
+				</query>
+				<query>
+					<queryString>select employee_id 사번, first_name||' '||last_name 이름, 
+to_char(salary*12,'$999,999,999') 본봉, decode(commission_pct,null,0,commission_pct)||'%'
+
+from employees</queryString>
+				</query>
+				<query>
+					<queryString>select employee_id 사번, first_name||' '||last_name 이름, 
+to_char(salary*12,'$999,999,999') 본봉, nvl(commission_pct,0)||'%' 성과급비율,
+to_char(salary + (salary * 12),0) 
+from employees</queryString>
+				</query>
+				<query>
+					<queryString>select employee_id 사번, first_name||' '||last_name 이름, 
+to_char(salary*12,'$999,999,999') 본봉, nvl(commission_pct,0)||'%' 성과급비율,
+to_char(salary*12 + salary*12*nvl(commission_pct,0),'$999,999,999') 실수령액 
+from employees</queryString>
+				</query>
+				<query>
+					<queryString>select employee_id 사번, first_name||' '||last_name 이름, 
+to_char(salary*12,'$999,999,999') 본봉, nvl(commission_pct,0)||'%' 성과급비율,
+to_char(salary*12 + salary*12*nvl(commission_pct,0),'$999,999,999') 실수령액,
+to_char(to_char(sysdate,'yyyy')-to_char(hire_date,'yyyy')) 
+from employees</queryString>
+				</query>
+				<query>
+					<queryString>select employee_id 사번, first_name||' '||last_name 이름, 
+to_char(salary*12,'$999,999,999') 본봉, nvl(commission_pct,0)||'%' 성과급비율,
+to_char(salary*12 + salary*12*nvl(commission_pct,0),'$999,999,999') 실수령액,
+to_char(to_char(sysdate,'yyyy')-to_char(hire_date,'yyyy')+1) 
+from employees</queryString>
+				</query>
+				<query>
+					<queryString>select employee_id 사번, first_name||' '||last_name 이름, 
+to_char(salary*12,'$999,999,999') 본봉, nvl(commission_pct,0)||'%' 성과급비율,
+to_char(salary*12 + salary*12*nvl(commission_pct,0),'$999,999,999') 실수령액,
+to_char(to_char(sysdate,'yyyy')-to_char(hire_date,'yyyy')+1)||'년' 근속년수
+from employees</queryString>
+				</query>
+				<query>
+					<queryString>select employee_id 사번, first_name||' '||last_name 이름, 
+to_char(salary*12,'$999,999,999') 본봉, nvl(commission_pct,0)||'%' 성과급비율,
+to_char(salary*12 + salary*12*nvl(commission_pct,0),'$999,999,999') 실수령액,
+to_char(to_char(sysdate,'yyyy')-to_char(hire_date,'yyyy')+1)||'년' 근속년수
+from employees 
+order by 6</queryString>
+				</query>
+				<query>
+					<queryString>select employee_id 사번, first_name||' '||last_name 이름, 
+to_char(salary*12,'$999,999,999') 본봉, nvl(commission_pct,0)||'%' 성과급비율,
+to_char(salary*12 + salary*12*nvl(commission_pct,0),'$999,999,999') 실수령액,
+to_char(to_char(sysdate,'yyyy')-to_char(hire_date,'yyyy')+1)||'년' 근속년수
+from employees 
+order by 6 desc</queryString>
+				</query>
+				<query>
+					<queryString>select employee_id 사번, first_name||' '||last_name 이름, 
+to_char(salary*12,'$999,999,999') 본봉, nvl(commission_pct,0)||'%' 성과급비율,
+to_char(salary*12 + salary*12*nvl(commission_pct,0),'$999,999,999') 실수령액,
+to_char(to_char(sysdate,'yyyy')-to_char(hire_date,'yyyy'))||'년차' 근속년수
+from employees 
+order by 6 desc</queryString>
+				</query>
+				<query>
+					<queryString>select employee_id 사번, first_name||' '||last_name 이름, 
+to_char(salary*12,'$999,999,999') 본봉, nvl(commission_pct,0)||'%' 성과급비율,
+to_char(salary*12 + salary*12*nvl(commission_pct,0),'$999,999,999') 실수령액,
+to_char(to_char(sysdate,'yyyy')-to_char(hire_date,'yyyy')+1)||'년차' 근속년수
+from employees 
+order by 6 desc</queryString>
+				</query>
+				<query>
+					<queryString>select employee_id 사번, first_name||' '||last_name 이름, 
+to_char(salary*12,'$999,999,999') 본봉, nvl(commission_pct,0)||'%' 성과급비율,
+to_char(salary*12 + salary*12*nvl(commission_pct,0),'$999,999,999') 실수령액,
+to_char(sysdate,'yyyy')-to_char(hire_date,'yyyy')+1||'년차' 근속년수
+from employees 
+order by 6 desc</queryString>
+				</query>
+				<query>
+					<queryString>select * from employees where first_name like '%a%'</queryString>
+				</query>
+				<query>
+					<queryString>CREATE TABLE  &quot;GENRES&quot;(
+&quot;NO&quot; NUMBER(6,0) NOT NULL ENABLE,
+&quot;NAME&quot; VARCHAR2(200) NOT NULL ENABLE,
+CONSTRAINT &quot;GENRES_PK&quot; PRIMARY KEY (&quot;NO&quot;) ENABLE)</queryString>
+				</query>
+			</queryList>
+		</bookmark>
+		<bookmark>
+			<name>test</name>
+			<username>test</username>
+			<password>1111</password>
+			<prompt>false</prompt>
+			<connect>jdbc:oracle:thin:@localhost:1521:xe</connect>
+			<autoCommit>true</autoCommit>
+			<autoCommitPreference>Always True</autoCommitPreference>
+			<autoCommitIgnoreView>false</autoCommitIgnoreView>
+			<quoteAll>false</quoteAll>
+			<sendQueryAsIs>false</sendQueryAsIs>
+			<stripNewline>false</stripNewline>
+			<shutdownOnDisconnect>false</shutdownOnDisconnect>
+			<defaultEncoding />
+			<driver>oracle.jdbc.OracleDriver</driver>
+			<type>ORACLE</type>
+			<substituteVariables>false</substituteVariables>
+			<variablesRegexp>\$\{(.*?)\}</variablesRegexp>
+			<driverLocation>C:\oraclexe\app\oracle\product\11.2.0\server\jdbc\lib\ojdbc6.jar</driverLocation>
+			<Other_Schemas schemaRule="useDefault" />
+			<quickList />
+			<queryList>
+				<query>
+					<queryString>INSERT INTO books (no,title,author,image,publication_date)
+VALUES(books_seq.nextval,'죽고 싶지만 떡볶이는 먹고 싶어','백세희','흔','2018-06-20')</queryString>
+				</query>
+				<query>
+					<queryString>INSERT INTO books(no,
+title, author, image,
+publication_date)
+VALUES(books_seq.nextval,'즐거운 日記','최승자'
+,'문학과지성사','1984-12-01')</queryString>
+				</query>
+				<query>
+					<queryString>INSERT INTO BOOKS(no, title, author, image, publication_date)
+VALUES (books_seq.nextval,'자존감수업','윤홍균','심플라이프','2016-09-01')</queryString>
+				</query>
+				<query>
+					<queryString>INSERT INTO books(no, title , author ,image, publication_date)
+VALUES (books_seq.nextval, '돌이킬 수 없는 약속', '야쿠마루 가쿠','북플라자','2017-02-02')</queryString>
+				</query>
+				<query>
+					<queryString>INSERT INTO books(no,title,author,image,publication_date)
+VALUES(books_seq.nextval,'헬퍼','삭','애니북스','2012-02-28')</queryString>
+				</query>
+				<query>
+					<queryString>INSERT INTO BOOKS(no, title, author, image, publication_date)
+values(books_seq.nextval,'1Q84','무라카미 하루키','문학동네','2009-08-25')</queryString>
+				</query>
+				<query>
+					<queryString>INSERT INTO BOOKS(no,title,image,author,publication_date)
+VALUES(books_seq.nextval,'오베라는남자','다산책방','프레드릭 배크만' ,'2015-05-20')</queryString>
+				</query>
+				<query>
+					<queryString>INSERT INTO books(no, title, author, image, publication_date)
+VALUES (books_seq.nextval, '27년 동안 영어 공부에 실패했던 39세 김과장은 어떻게 3개월 만에 영어 천재가 됐을까', '김영익', '비즈니스북스', '2018-05-24')</queryString>
+				</query>
+				<query>
+					<queryString>INSERT INTO books(no, title, author, image, publication_date)
+VALUES (books_seq.nextval, '언어의온도', '이기주', '말글터', '2016-08-19')</queryString>
+				</query>
+				<query>
+					<queryString>INSERT INTO books(no, title, author, image, publication_date)
+VALUES(books_seq.nextval, '7년의 밤', '정유정', '은행나무', '2011-03-23')</queryString>
+				</query>
+				<query>
+					<queryString>INSERT INTO BOOKS (NO , TITLE , AUTHOR , image , PUBLICATION_DATE)
+VALUES(BOOKS_SEQ.nextval , '세계는 넓고 할 일은 많다', '김우중', '북스코프','2018-03-15')</queryString>
+				</query>
+				<query>
+					<queryString>INSERT INTO BOOKS(no, title, author, image, publication_date)
+VALUES(books_seq.nextval, '개인주의자 선언', '문유석', '문학동네', '2015-09-23')</queryString>
+				</query>
+				<query>
+					<queryString>INSERT INTO books(no, title, author, image, publication_date)
+VALUES (books_seq.nextval, '스테이트오브더유니언','더글라스 케네디', '밝은세상','2014-11-07')</queryString>
+				</query>
+				<query>
+					<queryString>INSERT INTO BOOKS(NO,TITLE,author,image,PUBLICATION_DATE)
+VALUES(BOOKS_seq.nextval,'인생좌표','이케다 다이사쿠','중앙북스','2018-07-03')</queryString>
+				</query>
+				<query>
+					<queryString>INSERT INTO books(no,title,author,image,publication_date)
+VALUES(books_seq.nextval,'곰돌이 푸 행복한 일은 매일 있어','곰돌이 푸','알에이치코리아','2018.03.12')</queryString>
+				</query>
+				<query>
+					<queryString>alter table &quot;BOOKS&quot; modify(&quot;IMAGE&quot; VARCHAR2(500))</queryString>
+				</query>
+				<query>
+					<queryString>update books set image='default-book.jpg'</queryString>
+				</query>
+				<query>
+					<queryString>CREATE table &quot;USERS&quot; (
+&quot;NO&quot; NUMBER(9,0) NOT NULL,
+&quot;ID&quot; VARCHAR2(30) NOT NULL,
+&quot;PASSWORD&quot; VARCHAR2(50) NOT NULL,
+&quot;NICKNAME&quot; VARCHAR2(50) NOT NULL,
+&quot;REGDATE&quot; TIMESTAMP NOT NULL,
+constraint &quot;USERS_PK&quot; primary key (&quot;NO&quot;)
+)</queryString>
+				</query>
+				<query>
+					<queryString>create sequence &quot;USERS_SEQ&quot;
+start with 1
+increment by 1
+maxvalue 9999999999999999999
+minvalue 1
+nocache
+nocycle
+noorder</queryString>
+				</query>
+				<query>
+					<queryString>INSERT INTO users(no, id, password, nickname, regdate)
+VALUES (users_seq.nextval, 'lemon', '1234', '레몬녹차', systimestamp)</queryString>
+				</query>
+			</queryList>
+		</bookmark>
+		<bookmark>
+			<name>(Internal) Derby</name>
+			<username>QUANTUM</username>
+			<password />
+			<prompt>false</prompt>
+			<connect>jdbc:derby:C:/Users/Administrator/Downloads/eclipse-jee-photon-R-win32-x86_64/eclipse/plugins/com.quantum.derby_3.3.10/data/quantum</connect>
+			<autoCommit>true</autoCommit>
+			<autoCommitPreference>Always True</autoCommitPreference>
+			<autoCommitIgnoreView>false</autoCommitIgnoreView>
+			<quoteAll>false</quoteAll>
+			<sendQueryAsIs>false</sendQueryAsIs>
+			<stripNewline>false</stripNewline>
+			<shutdownOnDisconnect>true</shutdownOnDisconnect>
+			<defaultEncoding />
+			<driver>org.apache.derby.jdbc.EmbeddedDriver</driver>
+			<type>DERBY</type>
+			<substituteVariables>false</substituteVariables>
+			<variablesRegexp>\$\{(.*?)\}</variablesRegexp>
+			<driverLocation>C:/Users/Administrator/Downloads/eclipse-jee-photon-R-win32-x86_64/eclipse/plugins/com.quantum.derby_3.3.10/lib/derby.jar</driverLocation>
+			<Other_Schemas schemaRule="useAll" />
+			<quickList />
+			<queryList />
+		</bookmark>
+	</bookmarks>
+</SAVED_DATA>

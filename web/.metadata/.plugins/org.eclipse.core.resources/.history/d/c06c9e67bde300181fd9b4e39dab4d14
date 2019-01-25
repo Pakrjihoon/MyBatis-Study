@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="board">
+	<select id="selectOne" resultType="Article" parameterType="int">
+		SELECT b.no no,
+		b.title title,
+		b.contents contents,
+		b.regdate regdate,
+		b.hit hit,
+		m.no memberNo,
+		m.profile profile,
+		m.nickname nickname,
+		l.count likesNum,
+		r.count replyNum
+		FROM board b, members m,
+		(SELECT type_no boardNo,COUNT(*) count
+		FROM likes
+		WHERE type='B'
+		GROUP BY type_no) l,
+		(SELECT board_no boardNo,COUNT(*) count
+		FROM replies
+		GROUP BY board_no) r
+		WHERE b.member_no = m.no
+		AND b.no = l.boardNo(+)
+		AND b.no = r.boardNo(+)
+		AND b.no = #{no}
+	</select>
+	<insert id="insert" parameterType="Article">
+
+		INSERT INTO board(no, title, contents, member_no, hit, regdate) 
+		VALUES(board_seq.nextval, #{title}, #{contents}, #{memberNo}, 0, systimestamp)
+	</insert>
+</mapper>  
+
+
+
+

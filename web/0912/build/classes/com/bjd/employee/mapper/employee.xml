@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="employee">
+	<select id="selectList" resultType="Employee" parameterType="Page">
+			SELECT employeeId, firstName, lastName, salary, hireDate 
+		FROM (SELECT employeeId, firstName, lastName, salary, hireDate, rownum r
+				FROM (SELECT employee_id employeeId, first_name firstName, last_name lastName, salary, hire_date hireDate
+				FROM employees
+				ORDER BY 1 DESC))
+		WHERE r BETWEEN #{start} AND #{end}
+	</select>
+	<select id="selectTotal" resultType="int">
+		SELECT COUNT(*)
+		FROM employees
+	</select>
+</mapper> 

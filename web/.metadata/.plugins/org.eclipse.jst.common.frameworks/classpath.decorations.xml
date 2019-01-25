@@ -1,0 +1,7 @@
+<classpath>
+  <container id="0913!org.eclipse.jst.j2ee.internal.web.container">
+    <entry id="C:/bjd/workspace/web/0913/WebContent/WEB-INF/lib/cos.jar">
+      <source-attachment-path>C:/Program Files/Java/jdk1.8.0_181/src.zip</source-attachment-path>
+    </entry>
+  </container>
+</classpath>

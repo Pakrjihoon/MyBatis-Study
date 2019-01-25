@@ -1,0 +1,159 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>게시글쓰기</title>
+	<link rel="stylesheet" href="css/reset.css" />
+	<link rel="stylesheet" href="css/kakao.font.css" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/default.css" />
+	<link rel="shortcut icon" type="image/x-icon" href="img/logo.png"/>
+	<link rel="stylesheet" href="css/tui-editor.min.css">
+	<link rel="stylesheet" href="css/tui-editor-contents.min.css" />
+	<link rel="stylesheet" href="css/form.css" />
+</head>
+<body>
+<%@ include file="/WEB-INF/template/header.jsp" %>
+<div id="content">
+<div class="aux">
+	<h2 class="title"><i class="fas fa-pen-nib"></i> 게시글쓰기</h2>
+	<div id='formBox'>
+		<!--서버로 데이터를 보내는 폼 -->
+		<form id="writeForm" action="/write.jsp" method="post">
+			<fieldset>
+				<input type="hidden" id="contents" name="contents">
+				<legend class="screen_out">글쓰기폼</legend>
+				<div id="titleBox">
+					<label for="title">제 목</label>
+					<input type="text" id="title" name="title" placeholder="제목을 입력하세요"/>
+				</div>
+				<div id="editSection"></div>
+				<div class="box_btn">
+					<button class="btn" type="submit"><i class="fas fa-pen-nib"></i> 글쓰기</button>
+					<button class="btn" type="reset"><i class="fas fa-redo"></i> 취 소</button>
+					<a class="btn" href="index.jsp"><i class="far fa-list-alt"></i> 게시판으로</a>
+				</div>
+			</fieldset>
+		</form>
+		<%-- 이미지 업로드용 --%>
+		<input type="file" id="uploadImage">
+	</div>
+</div>
+</div>
+<%@ include file="/WEB-INF/template/footer.jsp" %>
+<script src="js/jquery.js"></script>
+<script src="js/tui-code-snippet.min.js"></script>
+<script src='js/markdown-it.js'></script>
+<script src="js/to-mark.min.js"></script>
+<script src="js/codemirror.js"></script>
+<script src="js/highlight.js"></script>
+<script src="js/squire-raw.js"></script>
+<script src="js/tui-editor-Editor.js"></script>
+<script>
+var fileTypeExp = /^image\//;
+var uploadImage = $("#uploadImage");
+var editor = new tui.Editor({
+	el: document.querySelector('#editSection'),
+	initialEditType: 'wysiwyg',
+	previewStyle: 'vertical',
+	height: '600px',
+	language:"ko",
+	toolbarItems: [
+	'heading',
+	'bold',
+	'italic',
+	'strike',
+	'divider',
+	'hr',
+	'quote',
+	'divider',
+	'ul',
+	'ol',
+	'task',
+	'divider',
+	'table',
+	'link',
+	'divider',
+	]
+	});
+//툴바
+const toolbar = editor.getUI().getToolbar();
+//이벤트 등록
+editor.eventManager.addEventType('imageEvent');
+//이벤트 리스너 / 핸들러
+editor.eventManager.listen('imageEvent', function() {
+	//파일 선택하는 다이얼로그창 뜸
+	$(uploadImage).click();
+	
+});	//listen() end
+
+toolbar.addButton({
+name: 'addImage',
+event: 'imageEvent',
+tooltip: '이미지 입력',
+$el: $('<button class="btn_image"><i class="fas fa-image"></i></button>')
+});
+    $("#writeForm").submit(function() {
+		//submit 될때 에디터안의 내용을 얻어와서
+		//input type=hidden인 요소
+		
+		//에디터의 값을 얻어오고
+		var value = editor.getValue();
+		
+		//console.log(value);
+		
+		//input type=hidden인 요소에 세팅
+		$("#contents").val(value);
+	}); //submit() end
+	$uploadImage.change(function() {
+		var file = this.files[0];
+
+		//console.log(file);
+
+		if(file.size==0) {
+		alert("제대로 된 파일을 선택해주세요.");
+		return;
+		}
+
+		console.log(fileTypeExp.test(file.type));
+
+		if(!fileTypeExp.test(file.type)) {
+		alert("이미지만 선택해주세요.");
+		return;
+		}
+
+		//alert("여기에 오면 파일이 있고 사진임");
+
+		var formData = new FormData();
+
+		formData.append("uploadImg",file,file.name);
+		formData.append("type","B");//B는 board의 줄임말
+
+		$.ajax({
+		url: '/ajax/uploadImage.jsp',
+		processData: false,
+		contentType: false,
+		data: formData,
+		type: 'POST',
+		dataType:"json",
+		error:function(xhr,error,code) {
+		alert("에러:"+code);
+		},
+		success: function(result){
+		console.log(result.src);
+
+		var squireExt = editor.wwEditor.getEditor();
+
+		squireExt.insertHTML("<img src='"+result.src+"'>");
+
+		$("<input type='hidden' name='uploadImg'>").val(result.src).appendTo("#writeForm");
+
+		}
+		});
+	});
+</script>
+<script src="js/fix-footer.js"></script>
+</body>
+</html>

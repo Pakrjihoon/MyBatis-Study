@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="region">
+
+	<select id="selectRegion" resultType="int" parameterType="String">
+	SELECT rg_no, parent 
+	FROM region 
+	WHERE name = #{gugun1}
+	</select>
+	<insert id="insertRegion1" parameterType="Region">
+	INSERT INTO region(r_no, u_no, rg_no)
+	VALUES (region_seq.nextval, #{uNo}, #{rgNo})
+	</insert>
+	<insert id="insertRegion2" parameterType="Region">
+	INSERT INTO region(r_no, u_no, rg_no)
+	VALUES (region_seq.nextval, #{uNo}, #{rgNo2})
+	</insert>
+	<insert id="insertRegion3" parameterType="Region">
+	INSERT INTO region(r_no, u_no, rg_no)
+	VALUES (region_seq.nextval, #{uNo}, #{rgNo3})
+	</insert>
+</mapper>  
+
+
+
+

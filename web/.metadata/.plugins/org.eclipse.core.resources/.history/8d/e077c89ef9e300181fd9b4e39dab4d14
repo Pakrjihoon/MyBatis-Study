@@ -1,0 +1,11 @@
+package com.hermes.hanbakwi.dao;
+
+import org.apache.ibatis.session.SqlSession;
+
+import com.hermes.hanbakwi.util.SqlSessionUtil;
+import com.hermes.hanbakwi.vo.User;
+
+public class ActivitiesDAO {
+	
+	
+}//ActivitiesDAO end

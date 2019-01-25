@@ -1,0 +1,51 @@
+@charset "UTF-8";
+
+#formBox {
+	width: 1100px;
+	margin: auto;
+}
+
+#titleBox {
+	margin: 20px 0;
+}
+
+#titleBox>label {
+	display: inline-block;
+	width: 60px;
+	text-align: right;
+	font-size: 22px;
+	font-weight: bold;
+	margin-right: 6px;
+	line-height: 39px;
+	vertical-align: middle;
+}
+
+#formBox input:focus, #formBox textarea:focus {
+	border-color: #14bab6;
+	outline: 1px solid #14bab6;
+	background: #F6F4FF;
+}
+
+#title {
+	font: 21px 'kakao', sans-serif;
+	border: 1px solid rgb(229, 229, 229);
+	padding: 10px 8px;
+	width: 1011px;
+	vertical-align: middle;
+}
+
+#editSection {
+	width: 1100px;
+}
+
+#editSection .tui-editor-defaultUI {
+	font: 21px 'kakao', sans-serif;
+}
+
+#content .box_btn {
+	margin-top: 20px;
+}
+
+.te-mode-switch-section {
+	display: none !important;
+}

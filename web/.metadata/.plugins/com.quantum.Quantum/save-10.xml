@@ -1,0 +1,595 @@
+<?xml version="1.0" ?>
+<SAVED_DATA>
+	<bookmarks>
+		<jdbcDriver className="org.apache.derby.jdbc.EmbeddedDriver" name="org.apache.derby.jdbc.EmbeddedDriver" type="DERBY" version="">
+			<jar fileName="C:/Users/Administrator/Downloads/eclipse-jee-photon-R-win32-x86_64/eclipse/plugins/com.quantum.derby_3.3.10/lib/derby.jar" />
+		</jdbcDriver>
+		<jdbcDriver className="oracle.jdbc.OracleDriver" name="Oracle JDBC driver" type="ORACLE" version="11.2.0.2.0">
+			<jar fileName="C:\oraclexe\app\oracle\product\11.2.0\server\jdbc\lib\ojdbc6.jar" />
+		</jdbcDriver>
+		<bookmark>
+			<name>HR</name>
+			<username>hr</username>
+			<password>1111</password>
+			<prompt>false</prompt>
+			<connect>jdbc:oracle:thin:@localhost:1521:xe</connect>
+			<autoCommit>true</autoCommit>
+			<autoCommitPreference>Always True</autoCommitPreference>
+			<autoCommitIgnoreView>false</autoCommitIgnoreView>
+			<quoteAll>false</quoteAll>
+			<sendQueryAsIs>false</sendQueryAsIs>
+			<stripNewline>false</stripNewline>
+			<shutdownOnDisconnect>false</shutdownOnDisconnect>
+			<defaultEncoding />
+			<driver>oracle.jdbc.OracleDriver</driver>
+			<type>ORACLE</type>
+			<substituteVariables>false</substituteVariables>
+			<variablesRegexp>\$\{(.*?)\}</variablesRegexp>
+			<driverLocation>C:\oraclexe\app\oracle\product\11.2.0\server\jdbc\lib\ojdbc6.jar</driverLocation>
+			<Other_Schemas schemaRule="useDefault" />
+			<quickList />
+			<queryList>
+				<query>
+					<queryString>select e.employee_id 사번,e.first_name||' '||e.last_name 사원성명, 
+j.job_title 직업명, m.first_name ||' '||m.last_name 상사명
+from employees e, employees m, jobs j
+where e.manager_id = m.employee_id(+)
+and e.job_id = j.job_id
+and e.department_id = (select department_id from departments 
+							where department_name = 'Finance')
+order by 3 desc ,2 desc</queryString>
+				</query>
+				<query>
+					<queryString>select e.employee_id 사번,e.first_name||' '||e.last_name 사원성명, 
+j.job_title 직업명, m.first_name ||' '||m.last_name 상사명
+from employees e, employees m, jobs j
+where e.manager_id = m.employee_id(+)
+and e.job_id = j.job_id
+and e.department_id = (select department_id from departments 
+							where department_name = 'Finance')
+order by 3 desc ,1</queryString>
+				</query>
+				<query>
+					<queryString>select e.employee_id 사번,e.first_name||' '||e.last_name 사원성명, 
+j.job_title 직업명, m.first_name ||' '||m.last_name 상사명
+from employees e, employees m, jobs j
+where e.manager_id = m.employee_id(+)
+and e.job_id = j.job_id
+and e.department_id = (select department_id from departments 
+							where department_name = 'Finance')
+order by 3 desc ,3</queryString>
+				</query>
+				<query>
+					<queryString>select e.employee_id 사번,e.first_name||' '||e.last_name 사원성명, 
+j.job_title 직업명, m.first_name ||' '||m.last_name 상사명
+from employees e, employees m, jobs j
+where e.manager_id = m.employee_id(+)
+and e.job_id = j.job_id
+and e.department_id = (select department_id from departments 
+							where department_name = 'Finance')
+order by 3 desc ,4</queryString>
+				</query>
+				<query>
+					<queryString>select e.employee_id 사번,e.first_name||' '||e.last_name 사원성명, 
+j.job_title 직업명, m.first_name ||' '||m.last_name 상사명
+from employees e, employees m, jobs j
+where e.manager_id = m.employee_id(+)
+and e.job_id = j.job_id
+and e.department_id = (select department_id from departments 
+							where department_name = 'Finance')
+order by 3 desc ,2</queryString>
+				</query>
+				<query>
+					<queryString>select employee_id 사번, first_name||' '||last_name 이름 
+from employees</queryString>
+				</query>
+				<query>
+					<queryString>select employee_id 사번, first_name||' '||last_name 이름, 
+to_char(salary*12,'$999,999,999') 본봉, nvl(commission_pct,0) 
+from employees</queryString>
+				</query>
+				<query>
+					<queryString>select employee_id 사번, first_name||' '||last_name 이름, 
+to_char(salary*12,'$999,999,999') 본봉, decode(commission_pct,null,0,commission_pct)||'%'
+
+from employees</queryString>
+				</query>
+				<query>
+					<queryString>select employee_id 사번, first_name||' '||last_name 이름, 
+to_char(salary*12,'$999,999,999') 본봉, nvl(commission_pct,0)||'%' 성과급비율,
+to_char(salary + (salary * 12),0) 
+from employees</queryString>
+				</query>
+				<query>
+					<queryString>select employee_id 사번, first_name||' '||last_name 이름, 
+to_char(salary*12,'$999,999,999') 본봉, nvl(commission_pct,0)||'%' 성과급비율,
+to_char(salary*12 + salary*12*nvl(commission_pct,0),'$999,999,999') 실수령액 
+from employees</queryString>
+				</query>
+				<query>
+					<queryString>select employee_id 사번, first_name||' '||last_name 이름, 
+to_char(salary*12,'$999,999,999') 본봉, nvl(commission_pct,0)||'%' 성과급비율,
+to_char(salary*12 + salary*12*nvl(commission_pct,0),'$999,999,999') 실수령액,
+to_char(to_char(sysdate,'yyyy')-to_char(hire_date,'yyyy')) 
+from employees</queryString>
+				</query>
+				<query>
+					<queryString>select employee_id 사번, first_name||' '||last_name 이름, 
+to_char(salary*12,'$999,999,999') 본봉, nvl(commission_pct,0)||'%' 성과급비율,
+to_char(salary*12 + salary*12*nvl(commission_pct,0),'$999,999,999') 실수령액,
+to_char(to_char(sysdate,'yyyy')-to_char(hire_date,'yyyy')+1) 
+from employees</queryString>
+				</query>
+				<query>
+					<queryString>select employee_id 사번, first_name||' '||last_name 이름, 
+to_char(salary*12,'$999,999,999') 본봉, nvl(commission_pct,0)||'%' 성과급비율,
+to_char(salary*12 + salary*12*nvl(commission_pct,0),'$999,999,999') 실수령액,
+to_char(to_char(sysdate,'yyyy')-to_char(hire_date,'yyyy')+1)||'년' 근속년수
+from employees</queryString>
+				</query>
+				<query>
+					<queryString>select employee_id 사번, first_name||' '||last_name 이름, 
+to_char(salary*12,'$999,999,999') 본봉, nvl(commission_pct,0)||'%' 성과급비율,
+to_char(salary*12 + salary*12*nvl(commission_pct,0),'$999,999,999') 실수령액,
+to_char(to_char(sysdate,'yyyy')-to_char(hire_date,'yyyy')+1)||'년' 근속년수
+from employees 
+order by 6</queryString>
+				</query>
+				<query>
+					<queryString>select employee_id 사번, first_name||' '||last_name 이름, 
+to_char(salary*12,'$999,999,999') 본봉, nvl(commission_pct,0)||'%' 성과급비율,
+to_char(salary*12 + salary*12*nvl(commission_pct,0),'$999,999,999') 실수령액,
+to_char(to_char(sysdate,'yyyy')-to_char(hire_date,'yyyy')+1)||'년' 근속년수
+from employees 
+order by 6 desc</queryString>
+				</query>
+				<query>
+					<queryString>select employee_id 사번, first_name||' '||last_name 이름, 
+to_char(salary*12,'$999,999,999') 본봉, nvl(commission_pct,0)||'%' 성과급비율,
+to_char(salary*12 + salary*12*nvl(commission_pct,0),'$999,999,999') 실수령액,
+to_char(to_char(sysdate,'yyyy')-to_char(hire_date,'yyyy'))||'년차' 근속년수
+from employees 
+order by 6 desc</queryString>
+				</query>
+				<query>
+					<queryString>select employee_id 사번, first_name||' '||last_name 이름, 
+to_char(salary*12,'$999,999,999') 본봉, nvl(commission_pct,0)||'%' 성과급비율,
+to_char(salary*12 + salary*12*nvl(commission_pct,0),'$999,999,999') 실수령액,
+to_char(to_char(sysdate,'yyyy')-to_char(hire_date,'yyyy')+1)||'년차' 근속년수
+from employees 
+order by 6 desc</queryString>
+				</query>
+				<query>
+					<queryString>select employee_id 사번, first_name||' '||last_name 이름, 
+to_char(salary*12,'$999,999,999') 본봉, nvl(commission_pct,0)||'%' 성과급비율,
+to_char(salary*12 + salary*12*nvl(commission_pct,0),'$999,999,999') 실수령액,
+to_char(sysdate,'yyyy')-to_char(hire_date,'yyyy')+1||'년차' 근속년수
+from employees 
+order by 6 desc</queryString>
+				</query>
+				<query>
+					<queryString>select * from employees where first_name like '%a%'</queryString>
+				</query>
+				<query>
+					<queryString>CREATE TABLE  &quot;GENRES&quot;(
+&quot;NO&quot; NUMBER(6,0) NOT NULL ENABLE,
+&quot;NAME&quot; VARCHAR2(200) NOT NULL ENABLE,
+CONSTRAINT &quot;GENRES_PK&quot; PRIMARY KEY (&quot;NO&quot;) ENABLE)</queryString>
+				</query>
+			</queryList>
+		</bookmark>
+		<bookmark>
+			<name>test</name>
+			<username>test</username>
+			<password>1111</password>
+			<prompt>false</prompt>
+			<connect>jdbc:oracle:thin:@localhost:1521:xe</connect>
+			<autoCommit>true</autoCommit>
+			<autoCommitPreference>Always True</autoCommitPreference>
+			<autoCommitIgnoreView>false</autoCommitIgnoreView>
+			<quoteAll>false</quoteAll>
+			<sendQueryAsIs>false</sendQueryAsIs>
+			<stripNewline>false</stripNewline>
+			<shutdownOnDisconnect>false</shutdownOnDisconnect>
+			<defaultEncoding />
+			<driver>oracle.jdbc.OracleDriver</driver>
+			<type>ORACLE</type>
+			<substituteVariables>false</substituteVariables>
+			<variablesRegexp>\$\{(.*?)\}</variablesRegexp>
+			<driverLocation>C:\oraclexe\app\oracle\product\11.2.0\server\jdbc\lib\ojdbc6.jar</driverLocation>
+			<Other_Schemas schemaRule="useDefault" />
+			<quickList />
+			<queryList>
+				<query>
+					<queryString>INSERT INTO BOOKS(no,title,image,author,publication_date)
+VALUES(books_seq.nextval,'오베라는남자','다산책방','프레드릭 배크만' ,'2015-05-20')</queryString>
+				</query>
+				<query>
+					<queryString>INSERT INTO books(no, title, author, image, publication_date)
+VALUES (books_seq.nextval, '27년 동안 영어 공부에 실패했던 39세 김과장은 어떻게 3개월 만에 영어 천재가 됐을까', '김영익', '비즈니스북스', '2018-05-24')</queryString>
+				</query>
+				<query>
+					<queryString>INSERT INTO books(no, title, author, image, publication_date)
+VALUES (books_seq.nextval, '언어의온도', '이기주', '말글터', '2016-08-19')</queryString>
+				</query>
+				<query>
+					<queryString>INSERT INTO books(no, title, author, image, publication_date)
+VALUES(books_seq.nextval, '7년의 밤', '정유정', '은행나무', '2011-03-23')</queryString>
+				</query>
+				<query>
+					<queryString>INSERT INTO BOOKS (NO , TITLE , AUTHOR , image , PUBLICATION_DATE)
+VALUES(BOOKS_SEQ.nextval , '세계는 넓고 할 일은 많다', '김우중', '북스코프','2018-03-15')</queryString>
+				</query>
+				<query>
+					<queryString>INSERT INTO BOOKS(no, title, author, image, publication_date)
+VALUES(books_seq.nextval, '개인주의자 선언', '문유석', '문학동네', '2015-09-23')</queryString>
+				</query>
+				<query>
+					<queryString>INSERT INTO books(no, title, author, image, publication_date)
+VALUES (books_seq.nextval, '스테이트오브더유니언','더글라스 케네디', '밝은세상','2014-11-07')</queryString>
+				</query>
+				<query>
+					<queryString>INSERT INTO BOOKS(NO,TITLE,author,image,PUBLICATION_DATE)
+VALUES(BOOKS_seq.nextval,'인생좌표','이케다 다이사쿠','중앙북스','2018-07-03')</queryString>
+				</query>
+				<query>
+					<queryString>INSERT INTO books(no,title,author,image,publication_date)
+VALUES(books_seq.nextval,'곰돌이 푸 행복한 일은 매일 있어','곰돌이 푸','알에이치코리아','2018.03.12')</queryString>
+				</query>
+				<query>
+					<queryString>alter table &quot;BOOKS&quot; modify(&quot;IMAGE&quot; VARCHAR2(500))</queryString>
+				</query>
+				<query>
+					<queryString>update books set image='default-book.jpg'</queryString>
+				</query>
+				<query>
+					<queryString>CREATE table &quot;USERS&quot; (
+&quot;NO&quot; NUMBER(9,0) NOT NULL,
+&quot;ID&quot; VARCHAR2(30) NOT NULL,
+&quot;PASSWORD&quot; VARCHAR2(50) NOT NULL,
+&quot;NICKNAME&quot; VARCHAR2(50) NOT NULL,
+&quot;REGDATE&quot; TIMESTAMP NOT NULL,
+constraint &quot;USERS_PK&quot; primary key (&quot;NO&quot;)
+)</queryString>
+				</query>
+				<query>
+					<queryString>create sequence &quot;USERS_SEQ&quot;
+start with 1
+increment by 1
+maxvalue 9999999999999999999
+minvalue 1
+nocache
+nocycle
+noorder</queryString>
+				</query>
+				<query>
+					<queryString>INSERT INTO users(no, id, password, nickname, regdate)
+VALUES (users_seq.nextval, 'lemon', '1234', '레몬녹차', systimestamp)</queryString>
+				</query>
+				<query>
+					<queryString>insert into genres(no,name)
+values (genres_seq.nextval, '공포')</queryString>
+				</query>
+				<query>
+					<queryString>insert into genres(no,name)
+values (genres_seq.nextval, '좀비')</queryString>
+				</query>
+				<query>
+					<queryString>insert into genres(no,name)
+values (genres_seq.nextval, '고어')</queryString>
+				</query>
+				<query>
+					<queryString>insert into genres(no,name)
+values (genres_seq.nextval, '호러')</queryString>
+				</query>
+				<query>
+					<queryString>insert into genres(no,name)
+values (genres_seq.nextval, '나이스')</queryString>
+				</query>
+				<query>
+					<queryString>insert into genres(no,name)
+values (genres_seq.nextval, '다큐')</queryString>
+				</query>
+			</queryList>
+		</bookmark>
+		<bookmark>
+			<name>(Internal) Derby</name>
+			<username>QUANTUM</username>
+			<password />
+			<prompt>false</prompt>
+			<connect>jdbc:derby:C:/Users/Administrator/Downloads/eclipse-jee-photon-R-win32-x86_64/eclipse/plugins/com.quantum.derby_3.3.10/data/quantum</connect>
+			<autoCommit>true</autoCommit>
+			<autoCommitPreference>Always True</autoCommitPreference>
+			<autoCommitIgnoreView>false</autoCommitIgnoreView>
+			<quoteAll>false</quoteAll>
+			<sendQueryAsIs>false</sendQueryAsIs>
+			<stripNewline>false</stripNewline>
+			<shutdownOnDisconnect>true</shutdownOnDisconnect>
+			<defaultEncoding />
+			<driver>org.apache.derby.jdbc.EmbeddedDriver</driver>
+			<type>DERBY</type>
+			<substituteVariables>false</substituteVariables>
+			<variablesRegexp>\$\{(.*?)\}</variablesRegexp>
+			<driverLocation>C:/Users/Administrator/Downloads/eclipse-jee-photon-R-win32-x86_64/eclipse/plugins/com.quantum.derby_3.3.10/lib/derby.jar</driverLocation>
+			<Other_Schemas schemaRule="useAll" />
+			<quickList />
+			<queryList />
+		</bookmark>
+		<bookmark>
+			<name>test2</name>
+			<username>TEST2</username>
+			<password>1111</password>
+			<prompt>false</prompt>
+			<connect>jdbc:oracle:thin:@localhost:1521:xe</connect>
+			<autoCommit>true</autoCommit>
+			<autoCommitPreference>Always True</autoCommitPreference>
+			<autoCommitIgnoreView>false</autoCommitIgnoreView>
+			<quoteAll>false</quoteAll>
+			<sendQueryAsIs>false</sendQueryAsIs>
+			<stripNewline>false</stripNewline>
+			<shutdownOnDisconnect>false</shutdownOnDisconnect>
+			<defaultEncoding />
+			<driver>oracle.jdbc.OracleDriver</driver>
+			<type>ORACLE</type>
+			<substituteVariables>false</substituteVariables>
+			<variablesRegexp>\$\{(.*?)\}</variablesRegexp>
+			<driverLocation>C:\oraclexe\app\oracle\product\11.2.0\server\jdbc\lib\ojdbc6.jar</driverLocation>
+			<Other_Schemas schemaRule="useDefault" />
+			<quickList />
+			<queryList>
+				<query>
+					<queryString>INSERT INTO members(no,id,password,nickname,regdate,birth_date,profile)
+VALUES(members_seq.nextval, 'sj6235','1111','툳',systimestamp,'1997-02-07','ice4.png')</queryString>
+				</query>
+				<query>
+					<queryString>insert into members(no,id,password,nickname,regdate,birth_date,profile)
+values(members_seq.nextval,'test', '1111', '나리', systimestamp, '1991-09-17', 'nari.jpg')</queryString>
+				</query>
+				<query>
+					<queryString>INSERT INTO MEMBERS(NO, ID ,PASSWORD, NICKNAME, REGDATE, BIRTH_DATE, PROFILE)
+VALUES(members_seq.nextval, '김현빈', '1111', '빈군', systimestamp,'1993-07-09','bin.jpg')</queryString>
+				</query>
+				<query>
+					<queryString>insert into members (NO,ID,PASSWORD,NICKNAME,REGDATE,BIRTH_DATE,PROFILE)
+values(members_seq.nextval,'test','123','홍길동',systimestamp,'2018-10-11','testset.jpg')</queryString>
+				</query>
+				<query>
+					<queryString>INSERT INTO members(no,id,password,nickname,regdate, birth_date, profile)
+VALUES(members_seq.nextval,'hyun1004','1111','닭발언니',systimestamp,'1989-02-23','코알라.jpg')</queryString>
+				</query>
+				<query>
+					<queryString>insert into members(NO,ID,PASSWORD,NICKNAME,REGDATE,BIRTH_DATE,PROFILE)
+values(members_seq.nextval, 'mercy', 1111,'hello',systimestamp,'1994-08-07','logo.png')</queryString>
+				</query>
+				<query>
+					<queryString>UPDATE &quot;TEST2&quot;.&quot;MEMBERS&quot; SET ID = 'hoon' WHERE (&quot;NO&quot; = 101) AND (ID = '하재훈')</queryString>
+				</query>
+				<query>
+					<queryString>UPDATE &quot;TEST2&quot;.&quot;MEMBERS&quot; SET ID = 'woon' WHERE (&quot;NO&quot; = 106) AND (ID = '한영운')</queryString>
+				</query>
+				<query>
+					<queryString></queryString>
+				</query>
+				<query>
+					<queryString>UPDATE &quot;TEST2&quot;.&quot;MEMBERS&quot; SET ID = '2test2' WHERE (&quot;NO&quot; = 108) AND (ID = 'test')</queryString>
+				</query>
+				<query>
+					<queryString>UPDATE &quot;TEST2&quot;.&quot;MEMBERS&quot; SET ID = '3test23' WHERE (&quot;NO&quot; = 110) AND (ID = 'test')</queryString>
+				</query>
+				<query>
+					<queryString>UPDATE &quot;TEST2&quot;.&quot;MEMBERS&quot; SET ID = 'hellotest' WHERE (&quot;NO&quot; = 111) AND (ID = '김현빈')</queryString>
+				</query>
+				<query>
+					<queryString>UPDATE &quot;TEST2&quot;.&quot;MEMBERS&quot; SET ID = 'qwe123test' WHERE (&quot;NO&quot; = 112) AND (ID = 'test')</queryString>
+				</query>
+				<query>
+					<queryString>UPDATE &quot;TEST2&quot;.&quot;MEMBERS&quot; SET ID = 'classon' WHERE (&quot;NO&quot; = 94) AND (ID = '혁진온')</queryString>
+				</query>
+				<query>
+					<queryString>drop table replies</queryString>
+				</query>
+				<query>
+					<queryString>CREATE TABLE &quot;REPLIES&quot;(
+&quot;NO&quot; NUMBER(9,0) NOT NULL ENABLE,
+&quot;MEMBER_NO&quot; NUMBER(9,0) NOT NULL ENABLE,
+&quot;BOARD_NO&quot; NUMBER(9,0) NOT NULL ENABLE,
+&quot;CONTENTS&quot; VARCHAR2(4000) NOT NULL ENABLE,
+&quot;REGDATE&quot; TIMESTAMP (6) NOT NULL ENABLE,
+CONSTRAINT &quot;REPLIES_PK&quot; PRIMARY KEY (&quot;NO&quot;) ENABLE)</queryString>
+				</query>
+				<query>
+					<queryString>ALTER TABLE &quot;REPLIES&quot; ADD CONSTRAINT &quot;REPLIES_FK&quot;
+FOREIGN KEY(&quot;MEMBER_NO&quot;) REFERENCES &quot;MEMBERS&quot; (&quot;NO&quot;) ENABLE</queryString>
+				</query>
+				<query>
+					<queryString>ALTER TABLE &quot;REPLIES&quot; ADD CONSTRAINT &quot;REPLIES_FK2&quot;
+FOREIGN KEY(&quot;BOARD_NO&quot;) REFERENCES &quot;BOARD&quot; (&quot;NO&quot;) ENABLE</queryString>
+				</query>
+				<query>
+					<queryString>select no, id, password, nickname, regdate, birth_date birthDate, profile
+from members</queryString>
+				</query>
+				<query>
+					<queryString>select no, id, password, nickname, regdate, birth_date birthDate, profile
+from members
+where id = 'yebin' and password = '1111'</queryString>
+				</query>
+			</queryList>
+		</bookmark>
+		<bookmark>
+			<name>hanbakwi</name>
+			<username>hanbakwi</username>
+			<password>1111</password>
+			<prompt>false</prompt>
+			<connect>jdbc:oracle:thin:@localhost:1521:xe</connect>
+			<autoCommit>true</autoCommit>
+			<autoCommitPreference>Always True</autoCommitPreference>
+			<autoCommitIgnoreView>false</autoCommitIgnoreView>
+			<quoteAll>false</quoteAll>
+			<sendQueryAsIs>false</sendQueryAsIs>
+			<stripNewline>false</stripNewline>
+			<shutdownOnDisconnect>false</shutdownOnDisconnect>
+			<defaultEncoding />
+			<driver>oracle.jdbc.OracleDriver</driver>
+			<type>ORACLE</type>
+			<substituteVariables>false</substituteVariables>
+			<variablesRegexp>\$\{(.*?)\}</variablesRegexp>
+			<driverLocation>C:\oraclexe\app\oracle\product\11.2.0\server\jdbc\lib\ojdbc6.jar</driverLocation>
+			<Other_Schemas schemaRule="useDefault" />
+			<quickList />
+			<queryList>
+				<query>
+					<queryString>drop TABLE &quot;DEPT&quot;
+cascade constraints</queryString>
+				</query>
+				<query>
+					<queryString>drop TABLE &quot;EMP&quot;
+cascade constraints</queryString>
+				</query>
+				<query>
+					<queryString>drop SEQUENCE &quot;DEMO_CUST_SEQ&quot;</queryString>
+				</query>
+				<query>
+					<queryString>drop SEQUENCE &quot;DEMO_ORDER_ITEMS_SEQ&quot;</queryString>
+				</query>
+				<query>
+					<queryString>drop SEQUENCE &quot;DEMO_ORD_SEQ&quot;</queryString>
+				</query>
+				<query>
+					<queryString>drop SEQUENCE &quot;DEMO_PROD_SEQ&quot;</queryString>
+				</query>
+				<query>
+					<queryString>drop SEQUENCE &quot;DEMO_USERS_SEQ&quot;</queryString>
+				</query>
+				<query>
+					<queryString>drop TABLE &quot;APEX$_ACL&quot;</queryString>
+				</query>
+				<query>
+					<queryString>CREATE TABLE &quot;USERS&quot; (
+	u_no NUMBER(9,0) NOT NULL, 
+	profile_img VARCHAR2(500), 
+	id VARCHAR2(12), 
+	pw VARCHAR2(15), 
+	nickname VARCHAR2(30), 
+	birth_date DATE, 
+	gender CHAR(1), 
+	u_tier CHAR(1), 
+	regdate TIMESTAMP 
+)</queryString>
+				</query>
+				<query>
+					<queryString>CREATE UNIQUE INDEX PK_USER
+	ON &quot;USERS&quot; (
+		u_no ASC
+	)
+	STORAGE (
+		BUFFER_POOL DEFAULT
+	)
+	NOLOGGING
+	NOCOMPRESS
+	NOSORT
+	NOPARALLEL</queryString>
+				</query>
+				<query>
+					<queryString>ALTER TABLE &quot;USERS&quot;
+	ADD
+		CONSTRAINT PK_USER
+		PRIMARY KEY (
+			u_no
+		)
+		NOT DEFERRABLE
+		INITIALLY IMMEDIATE
+		ENABLE
+		VALIDATE</queryString>
+				</query>
+				<query>
+					<queryString>DROP table users</queryString>
+				</query>
+				<query>
+					<queryString>CREATE TABLE &quot;USER&quot;(
+
+	u_no NUMBER(9,0) NOT NULL, 
+
+	profile_img VARCHAR2(500) NOT NULL, 
+
+	id VARCHAR2(12) NOT NULL, 
+
+	pw VARCHAR2(15) NOT NULL, 
+
+	nickname VARCHAR2(30) NOT NULL, 
+
+	birth_date DATE NOT NULL, 
+
+	gender CHAR(1) NOT NULL, 
+
+	u_tier CHAR(1) NOT NULL, 
+
+	regdate TIMESTAMP NOT NULL 
+
+)</queryString>
+				</query>
+				<query>
+					<queryString>ALTER TABLE &quot;USER&quot;
+
+	ADD
+
+		CONSTRAINT PK_USER
+
+		PRIMARY KEY (
+
+			u_no
+
+		)</queryString>
+				</query>
+				<query>
+					<queryString>drop TABLE &quot;USER&quot;</queryString>
+				</query>
+				<query>
+					<queryString>CREATE TABLE &quot;USERS&quot; (
+
+	u_no NUMBER(9,0) NOT NULL, 
+
+	profile_img VARCHAR2(500) NOT NULL, 
+
+	id VARCHAR2(12) NOT NULL, 
+
+	pw VARCHAR2(15) NOT NULL, 
+
+	nickname VARCHAR2(30) NOT NULL, 
+
+	birth_date DATE NOT NULL, 
+
+	gender CHAR(1) NOT NULL, 
+
+	u_tier CHAR(1) NOT NULL, 
+
+	regdate TIMESTAMP NOT NULL 
+
+)</queryString>
+				</query>
+				<query>
+					<queryString>ALTER TABLE USERS
+
+	ADD
+
+		CONSTRAINT PK_USER
+
+		PRIMARY KEY (
+
+			u_no
+
+		)</queryString>
+				</query>
+				<query>
+					<queryString>UPDATE &quot;HANBAKWI&quot;.&quot;USERS&quot; SET PW = 'PASSWORD' WHERE (U_NO = ) AND (PW = '')</queryString>
+				</query>
+				<query>
+					<queryString></queryString>
+				</query>
+				<query>
+					<queryString>alter table users rename column pw to password</queryString>
+				</query>
+			</queryList>
+		</bookmark>
+	</bookmarks>
+</SAVED_DATA>

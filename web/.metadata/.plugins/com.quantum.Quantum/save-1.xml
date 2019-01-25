@@ -1,0 +1,327 @@
+<?xml version="1.0" ?>
+<SAVED_DATA>
+	<bookmarks>
+		<jdbcDriver className="org.apache.derby.jdbc.EmbeddedDriver" name="org.apache.derby.jdbc.EmbeddedDriver" type="DERBY" version="">
+			<jar fileName="C:/Users/Administrator/Downloads/eclipse-jee-photon-R-win32-x86_64/eclipse/plugins/com.quantum.derby_3.3.10/lib/derby.jar" />
+		</jdbcDriver>
+		<jdbcDriver className="oracle.jdbc.OracleDriver" name="Oracle JDBC driver" type="ORACLE" version="11.2.0.2.0">
+			<jar fileName="C:\oraclexe\app\oracle\product\11.2.0\server\jdbc\lib\ojdbc6.jar" />
+		</jdbcDriver>
+		<bookmark>
+			<name>HR</name>
+			<username>hr</username>
+			<password>1111</password>
+			<prompt>false</prompt>
+			<connect>jdbc:oracle:thin:@localhost:1521:xe</connect>
+			<autoCommit>true</autoCommit>
+			<autoCommitPreference>Always True</autoCommitPreference>
+			<autoCommitIgnoreView>false</autoCommitIgnoreView>
+			<quoteAll>false</quoteAll>
+			<sendQueryAsIs>false</sendQueryAsIs>
+			<stripNewline>false</stripNewline>
+			<shutdownOnDisconnect>false</shutdownOnDisconnect>
+			<defaultEncoding />
+			<driver>oracle.jdbc.OracleDriver</driver>
+			<type>ORACLE</type>
+			<substituteVariables>false</substituteVariables>
+			<variablesRegexp>\$\{(.*?)\}</variablesRegexp>
+			<driverLocation>C:\oraclexe\app\oracle\product\11.2.0\server\jdbc\lib\ojdbc6.jar</driverLocation>
+			<Other_Schemas schemaRule="useDefault" />
+			<quickList />
+			<queryList>
+				<query>
+					<queryString>select e.employee_id 사번,e.first_name||' '||e.last_name 사원성명, 
+j.job_title 직업명, m.first_name ||' '||m.last_name 상사명
+from employees e, employees m, jobs j
+where e.manager_id = m.employee_id(+)
+and e.job_id = j.job_id
+and e.department_id = (select department_id from departments 
+							where department_name = 'Finance')
+order by 3 desc ,2 desc</queryString>
+				</query>
+				<query>
+					<queryString>select e.employee_id 사번,e.first_name||' '||e.last_name 사원성명, 
+j.job_title 직업명, m.first_name ||' '||m.last_name 상사명
+from employees e, employees m, jobs j
+where e.manager_id = m.employee_id(+)
+and e.job_id = j.job_id
+and e.department_id = (select department_id from departments 
+							where department_name = 'Finance')
+order by 3 desc ,1</queryString>
+				</query>
+				<query>
+					<queryString>select e.employee_id 사번,e.first_name||' '||e.last_name 사원성명, 
+j.job_title 직업명, m.first_name ||' '||m.last_name 상사명
+from employees e, employees m, jobs j
+where e.manager_id = m.employee_id(+)
+and e.job_id = j.job_id
+and e.department_id = (select department_id from departments 
+							where department_name = 'Finance')
+order by 3 desc ,3</queryString>
+				</query>
+				<query>
+					<queryString>select e.employee_id 사번,e.first_name||' '||e.last_name 사원성명, 
+j.job_title 직업명, m.first_name ||' '||m.last_name 상사명
+from employees e, employees m, jobs j
+where e.manager_id = m.employee_id(+)
+and e.job_id = j.job_id
+and e.department_id = (select department_id from departments 
+							where department_name = 'Finance')
+order by 3 desc ,4</queryString>
+				</query>
+				<query>
+					<queryString>select e.employee_id 사번,e.first_name||' '||e.last_name 사원성명, 
+j.job_title 직업명, m.first_name ||' '||m.last_name 상사명
+from employees e, employees m, jobs j
+where e.manager_id = m.employee_id(+)
+and e.job_id = j.job_id
+and e.department_id = (select department_id from departments 
+							where department_name = 'Finance')
+order by 3 desc ,2</queryString>
+				</query>
+				<query>
+					<queryString>select employee_id 사번, first_name||' '||last_name 이름 
+from employees</queryString>
+				</query>
+				<query>
+					<queryString>select employee_id 사번, first_name||' '||last_name 이름, 
+to_char(salary*12,'$999,999,999') 본봉, nvl(commission_pct,0) 
+from employees</queryString>
+				</query>
+				<query>
+					<queryString>select employee_id 사번, first_name||' '||last_name 이름, 
+to_char(salary*12,'$999,999,999') 본봉, decode(commission_pct,null,0,commission_pct)||'%'
+
+from employees</queryString>
+				</query>
+				<query>
+					<queryString>select employee_id 사번, first_name||' '||last_name 이름, 
+to_char(salary*12,'$999,999,999') 본봉, nvl(commission_pct,0)||'%' 성과급비율,
+to_char(salary + (salary * 12),0) 
+from employees</queryString>
+				</query>
+				<query>
+					<queryString>select employee_id 사번, first_name||' '||last_name 이름, 
+to_char(salary*12,'$999,999,999') 본봉, nvl(commission_pct,0)||'%' 성과급비율,
+to_char(salary*12 + salary*12*nvl(commission_pct,0),'$999,999,999') 실수령액 
+from employees</queryString>
+				</query>
+				<query>
+					<queryString>select employee_id 사번, first_name||' '||last_name 이름, 
+to_char(salary*12,'$999,999,999') 본봉, nvl(commission_pct,0)||'%' 성과급비율,
+to_char(salary*12 + salary*12*nvl(commission_pct,0),'$999,999,999') 실수령액,
+to_char(to_char(sysdate,'yyyy')-to_char(hire_date,'yyyy')) 
+from employees</queryString>
+				</query>
+				<query>
+					<queryString>select employee_id 사번, first_name||' '||last_name 이름, 
+to_char(salary*12,'$999,999,999') 본봉, nvl(commission_pct,0)||'%' 성과급비율,
+to_char(salary*12 + salary*12*nvl(commission_pct,0),'$999,999,999') 실수령액,
+to_char(to_char(sysdate,'yyyy')-to_char(hire_date,'yyyy')+1) 
+from employees</queryString>
+				</query>
+				<query>
+					<queryString>select employee_id 사번, first_name||' '||last_name 이름, 
+to_char(salary*12,'$999,999,999') 본봉, nvl(commission_pct,0)||'%' 성과급비율,
+to_char(salary*12 + salary*12*nvl(commission_pct,0),'$999,999,999') 실수령액,
+to_char(to_char(sysdate,'yyyy')-to_char(hire_date,'yyyy')+1)||'년' 근속년수
+from employees</queryString>
+				</query>
+				<query>
+					<queryString>select employee_id 사번, first_name||' '||last_name 이름, 
+to_char(salary*12,'$999,999,999') 본봉, nvl(commission_pct,0)||'%' 성과급비율,
+to_char(salary*12 + salary*12*nvl(commission_pct,0),'$999,999,999') 실수령액,
+to_char(to_char(sysdate,'yyyy')-to_char(hire_date,'yyyy')+1)||'년' 근속년수
+from employees 
+order by 6</queryString>
+				</query>
+				<query>
+					<queryString>select employee_id 사번, first_name||' '||last_name 이름, 
+to_char(salary*12,'$999,999,999') 본봉, nvl(commission_pct,0)||'%' 성과급비율,
+to_char(salary*12 + salary*12*nvl(commission_pct,0),'$999,999,999') 실수령액,
+to_char(to_char(sysdate,'yyyy')-to_char(hire_date,'yyyy')+1)||'년' 근속년수
+from employees 
+order by 6 desc</queryString>
+				</query>
+				<query>
+					<queryString>select employee_id 사번, first_name||' '||last_name 이름, 
+to_char(salary*12,'$999,999,999') 본봉, nvl(commission_pct,0)||'%' 성과급비율,
+to_char(salary*12 + salary*12*nvl(commission_pct,0),'$999,999,999') 실수령액,
+to_char(to_char(sysdate,'yyyy')-to_char(hire_date,'yyyy'))||'년차' 근속년수
+from employees 
+order by 6 desc</queryString>
+				</query>
+				<query>
+					<queryString>select employee_id 사번, first_name||' '||last_name 이름, 
+to_char(salary*12,'$999,999,999') 본봉, nvl(commission_pct,0)||'%' 성과급비율,
+to_char(salary*12 + salary*12*nvl(commission_pct,0),'$999,999,999') 실수령액,
+to_char(to_char(sysdate,'yyyy')-to_char(hire_date,'yyyy')+1)||'년차' 근속년수
+from employees 
+order by 6 desc</queryString>
+				</query>
+				<query>
+					<queryString>select employee_id 사번, first_name||' '||last_name 이름, 
+to_char(salary*12,'$999,999,999') 본봉, nvl(commission_pct,0)||'%' 성과급비율,
+to_char(salary*12 + salary*12*nvl(commission_pct,0),'$999,999,999') 실수령액,
+to_char(sysdate,'yyyy')-to_char(hire_date,'yyyy')+1||'년차' 근속년수
+from employees 
+order by 6 desc</queryString>
+				</query>
+				<query>
+					<queryString>select * from employees where first_name like '%a%'</queryString>
+				</query>
+				<query>
+					<queryString>CREATE TABLE  &quot;GENRES&quot;(
+&quot;NO&quot; NUMBER(6,0) NOT NULL ENABLE,
+&quot;NAME&quot; VARCHAR2(200) NOT NULL ENABLE,
+CONSTRAINT &quot;GENRES_PK&quot; PRIMARY KEY (&quot;NO&quot;) ENABLE)</queryString>
+				</query>
+			</queryList>
+		</bookmark>
+		<bookmark>
+			<name>test</name>
+			<username>test</username>
+			<password>1111</password>
+			<prompt>false</prompt>
+			<connect>jdbc:oracle:thin:@localhost:1521:xe</connect>
+			<autoCommit>true</autoCommit>
+			<autoCommitPreference>Always True</autoCommitPreference>
+			<autoCommitIgnoreView>false</autoCommitIgnoreView>
+			<quoteAll>false</quoteAll>
+			<sendQueryAsIs>false</sendQueryAsIs>
+			<stripNewline>false</stripNewline>
+			<shutdownOnDisconnect>false</shutdownOnDisconnect>
+			<defaultEncoding />
+			<driver>oracle.jdbc.OracleDriver</driver>
+			<type>ORACLE</type>
+			<substituteVariables>false</substituteVariables>
+			<variablesRegexp>\$\{(.*?)\}</variablesRegexp>
+			<driverLocation>C:\oraclexe\app\oracle\product\11.2.0\server\jdbc\lib\ojdbc6.jar</driverLocation>
+			<Other_Schemas schemaRule="useDefault" />
+			<quickList />
+			<queryList>
+				<query>
+					<queryString>select g.name 장르명, to_char(avg(m.audience_num),'999,999,999')||'명' 평균관객수
+from movies m, genres g
+group by g.name</queryString>
+				</query>
+				<query>
+					<queryString>select g.name 장르명, to_char(avg(m.audience_num),'999,999,999')||'명' 평균관객수, sum(m.no) 영화갯수
+from movies m, genres g
+group by g.name</queryString>
+				</query>
+				<query>
+					<queryString>select g.name 장르명, to_char(avg(m.audience_num),'999,999,999')||'명' 평균관객수, sum(m.no) 영화갯수
+from movies m, genres g
+where g.no = m.genre
+group by g.name</queryString>
+				</query>
+				<query>
+					<queryString>select g.name 장르명, to_char(avg(m.audience_num),'999,999,999')||'명' 평균관객수, sum(m.no) 영화갯수
+from movies m, genres g
+where g.no = m.genre
+group by g.name order by 2</queryString>
+				</query>
+				<query>
+					<queryString>select g.name 장르명, to_char(avg(m.audience_num),'999,999,999')||'명' 평균관객수, sum(m.no) 영화갯수
+from movies m, genres g
+where g.no = m.genre
+group by g.name order by 2 desc</queryString>
+				</query>
+				<query>
+					<queryString>select g.name 장르명, to_char(avg(m.audience_num),'999,999,999')||'명' 평균관객수, count(*) 영화갯수
+from movies m, genres g
+where g.no = m.genre
+group by g.name order by 2 desc</queryString>
+				</query>
+				<query>
+					<queryString>select g.name 장르명, to_char(avg(m.audience_num),'999,999,999')||'명' 평균관객수, count(*)||'개' 영화갯수
+from movies m, genres g
+where g.no = m.genre
+group by g.name order by 2 desc</queryString>
+				</query>
+				<query>
+					<queryString>select name 영화명, to_char(sysdate,'yyyy')-to_char(release_date,'yyyy')
+from movies</queryString>
+				</query>
+				<query>
+					<queryString>select name 영화명, to_char(sysdate,'dd')-to_char(release_date,'dd')
+from movies</queryString>
+				</query>
+				<query>
+					<queryString>select name 영화명, to_char(sysdate,'mm')-to_char(release_date,'mm')
+from movies</queryString>
+				</query>
+				<query>
+					<queryString>select name 영화명, sysdate-release_date
+from movies</queryString>
+				</query>
+				<query>
+					<queryString>select name 영화명, ceil(sysdate-release_date)||'일'
+from movies</queryString>
+				</query>
+				<query>
+					<queryString>select name 영화명, ceil(sysdate-release_date)||'일' 개봉일수
+from movies</queryString>
+				</query>
+				<query>
+					<queryString>select name 영화명, nvl(end_date,sysdate)-release_date||'일' 개봉일수
+from movies</queryString>
+				</query>
+				<query>
+					<queryString>select name 영화명, ceil(nvl(end_date,sysdate)-release_date)||'일' 개봉일수
+from movies</queryString>
+				</query>
+				<query>
+					<queryString>select name 영화명, ceil(nvl(end_date,sysdate)-release_date)||'일' 개봉일수, 
+audience_num/(ceil(nvl(end_date,sysdate)-release_date)) &quot;하루평균 관객수&quot;
+from movies</queryString>
+				</query>
+				<query>
+					<queryString>select name 영화명, ceil(nvl(end_date,sysdate)-release_date)||'일' 개봉일수, 
+to_char(audience_num/(ceil(nvl(end_date,sysdate)-release_date)),'999,999,999')||'명' &quot;하루평균 관객수&quot;
+from movies</queryString>
+				</query>
+				<query>
+					<queryString>select name 영화명, ceil(nvl(end_date,sysdate)-release_date)||'일' 개봉일수, 
+to_char(audience_num/(ceil(nvl(end_date,sysdate)-release_date)),'999,999,999')||'명' &quot;하루평균 관객수&quot;
+from movies
+order by 3</queryString>
+				</query>
+				<query>
+					<queryString>select name 영화명, ceil(nvl(end_date,sysdate)-release_date)||'일' 개봉일수, 
+to_char(audience_num/(ceil(nvl(end_date,sysdate)-release_date)),'999,999,999')||'명' &quot;하루평균 관객수&quot;
+from movies
+order by 3 desc</queryString>
+				</query>
+				<query>
+					<queryString>insert into genres(no,name)
+values(genres_seq.nextval, 'test2')</queryString>
+				</query>
+			</queryList>
+		</bookmark>
+		<bookmark>
+			<name>(Internal) Derby</name>
+			<username>QUANTUM</username>
+			<password />
+			<prompt>false</prompt>
+			<connect>jdbc:derby:C:/Users/Administrator/Downloads/eclipse-jee-photon-R-win32-x86_64/eclipse/plugins/com.quantum.derby_3.3.10/data/quantum</connect>
+			<autoCommit>true</autoCommit>
+			<autoCommitPreference>Always True</autoCommitPreference>
+			<autoCommitIgnoreView>false</autoCommitIgnoreView>
+			<quoteAll>false</quoteAll>
+			<sendQueryAsIs>false</sendQueryAsIs>
+			<stripNewline>false</stripNewline>
+			<shutdownOnDisconnect>true</shutdownOnDisconnect>
+			<defaultEncoding />
+			<driver>org.apache.derby.jdbc.EmbeddedDriver</driver>
+			<type>DERBY</type>
+			<substituteVariables>false</substituteVariables>
+			<variablesRegexp>\$\{(.*?)\}</variablesRegexp>
+			<driverLocation>C:/Users/Administrator/Downloads/eclipse-jee-photon-R-win32-x86_64/eclipse/plugins/com.quantum.derby_3.3.10/lib/derby.jar</driverLocation>
+			<Other_Schemas schemaRule="useAll" />
+			<quickList />
+			<queryList />
+		</bookmark>
+	</bookmarks>
+</SAVED_DATA>

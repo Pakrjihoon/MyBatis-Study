@@ -1,0 +1,20 @@
+<%@page import="org.bjd.model1.dao.MembersDAO"%>
+<%@page import="org.bjd.model1.vo.Member"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<% 
+
+// 파라미터 : id , password
+
+String id = request.getParameter("id");
+String password = request.getParameter("password");
+String nickname = request.getParameter("nickname");
+String profile = request.getParameter("profile");
+
+Member member = new Member(id, password);
+
+MembersDAO.selectLogin(member);
+session.setAttribute("loginMember", member);
+
+response.sendRedirect("index.jsp");
+%>

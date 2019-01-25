@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="guestbook">
+	<insert id="insert" parameterType="Guest">
+	INSERT INTO guestbook(no, writer, contents, regdate, ip)
+	VALUES(guestbook_seq.nextval, #{writer}, #{contents}, systimestamp, #{ip})
+	</insert>
+	<select id="selectList" resultType="Guest" parameterType="Page">
+	SELECT no, writer, contents, regdate, ip 
+	FROM (SELECT no, writer, contents, regdate, ip, rownum r
+		  FROM (select no, writer, contents, regdate, ip
+	 	  FROM guestbook
+      	  ORDER BY no desc))
+	WHERE r BETWEEN #{start} AND #{end}
+	</select>
+	<delete id="delete" parameterType="int">
+	DELETE guestbook WHERE no = #{no}
+	</delete>
+	<select id="selectOne" resultType="Guest" parameterType="int">
+	SELECT no, writer, contents, regdate, ip
+	FROM guestbook
+	WHERE no = #{no}
+	</select>
+	<update id="update" parameterType="Guest">
+	UPDATE guestbook
+	SET writer = #{writer}, contents = #{contents}
+	WHERE no=#{no}
+	</update>
+	<select id="selectTotal" resultType="int">
+	SELECT COUNT(*)
+	FROM guestbook
+	</select>
+</mapper>  
+
+
+
+

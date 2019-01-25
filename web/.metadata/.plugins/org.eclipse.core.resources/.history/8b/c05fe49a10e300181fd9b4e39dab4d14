@@ -1,0 +1,91 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>게시글쓰기</title>
+	<link rel="stylesheet" href="css/reset.css" />
+	<link rel="stylesheet" href="css/kakao.font.css" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/default.css" />
+	<link rel="shortcut icon" type="image/x-icon" href="img/logo.png"/>
+	<link rel="stylesheet" href="css/tui-editor.min.css">
+	<link rel="stylesheet" href="css/tui-editor-contents.min.css" />
+	<link rel="stylesheet" href="css/form.css" />
+</head>
+<body>
+<%@ include file="/WEB-INF/template/header.jsp" %>
+<div id="content">
+<div class="aux">
+	<h2 class="title"><i class="fas fa-pen-nib"></i> 게시글쓰기</h2>
+	<div id='formBox'>
+		<!--서버로 데이터를 보내는 폼 -->
+		<form id="writeForm" action="/write.jsp" method="post">
+			<fieldset>
+				<input type="hidden" id="contents" name="contents">
+				<legend class="screen_out">글쓰기폼</legend>
+				<div id="titleBox">
+					<label for="title">제 목</label>
+					<input type="text" id="title" name="title" placeholder="제목을 입력하세요"/>
+				</div>
+				<div id="editSection"></div>
+				<div class="box_btn">
+					<button class="btn" type="submit"><i class="fas fa-pen-nib"></i> 글쓰기</button>
+					<button class="btn" type="reset"><i class="fas fa-redo"></i> 취 소</button>
+					<a class="btn" href="index.jsp"><i class="far fa-list-alt"></i> 게시판으로</a>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</div>
+</div>
+<%@ include file="/WEB-INF/template/footer.jsp" %>
+<script src="js/jquery.js"></script>
+<script src="js/tui-code-snippet.min.js"></script>
+<script src='js/markdown-it.js'></script>
+<script src="js/to-mark.min.js"></script>
+<script src="js/codemirror.js"></script>
+<script src="js/highlight.js"></script>
+<script src="js/squire-raw.js"></script>
+<script src="js/tui-editor-Editor.js"></script>
+<script>
+
+
+var editor = new tui.Editor({
+	el: document.querySelector('#editSection'),
+	initialEditType: 'wysiwyg',
+	previewStyle: 'vertical',
+	height: '600px',
+	language:"ko",
+	toolbarItems: [
+	'heading',
+	'bold',
+	'italic',
+	'strike',
+	'divider',
+	'hr',
+	'quote',
+	'divider',
+	'ul',
+	'ol',
+	'task',
+	'divider',
+	'table',
+	'link',
+	'divider'
+	]
+	});
+    $("#writeForm").submit(function() {
+		//submit 될때 에디터안의 내용을 얻어와서
+		//input type=hidden인 요소
+		var value = editor.setValue();
+		console.log(value);
+		$("#contents").val();
+		return false;
+	});
+
+</script>
+<script src="js/fix-footer.js"></script>
+</body>
+</html>

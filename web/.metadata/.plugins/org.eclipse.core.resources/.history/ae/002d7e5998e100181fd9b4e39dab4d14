@@ -1,0 +1,34 @@
+package com.hermes.hanbakwi.dao;
+
+import com.hermes.hanbakwi.util.SqlSessionUtil;
+import com.hermes.hanbakwi.vo.User;
+
+public class UsersDAO {
+	
+	public static Users selectLogin (User member) {
+		User loginMember = null;
+		SqlSession session = null;
+		try {
+			session = SqlSessionUtil.getSession();
+			loginMember = session.selectOne("members.selectLogin", member);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		} // try~catch~finally end
+		return loginMember;
+	}//selectLogin() end 
+	public static int selectCheckId(String id) {
+		int count = 0;
+		SqlSession session = null;
+		try {
+			session = SqlSessionUtil.getSession();
+			count = session.selectOne("members.selectCheckId",id); 
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return count;
+	}
+}//MembersDAO end

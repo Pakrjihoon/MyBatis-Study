@@ -1,0 +1,54 @@
+package org.bjd.model1.vo;
+
+import java.sql.Timestamp;
+
+public class Article {
+	private int no, memberNo, hit;
+	private String title, contents;
+	private Timestamp regDate;
+	
+	public Article() {
+		
+	}
+	public Article(String title, String contents, int memberNo) {
+		this.title = title;
+		this.contents = contents;
+		this.memberNo = memberNo;
+	}
+	public int getNo() {
+		return no;
+	}
+	public void setNo(int no) {
+		this.no = no;
+	}
+	public int getMemberNo() {
+		return memberNo;
+	}
+	public void setMemberNo(int memberNo) {
+		this.memberNo = memberNo;
+	}
+	public int getHit() {
+		return hit;
+	}
+	public void setHit(int hit) {
+		this.hit = hit;
+	}
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getContents() {
+		return contents;
+	}
+	public void setContents(String contents) {
+		this.contents = contents;
+	}
+	public Timestamp getRegDate() {
+		return regDate;
+	}
+	public void setRegDate(Timestamp regDate) {
+		this.regDate = regDate;
+	}
+}

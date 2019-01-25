@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="board">
+	<insert id="insert" parameterType="Article">
+		INSERT INTO board(no, title, contents, member_no, hit, regdate) 
+		VALUES(board_seq.nextval, #{title}, #{contents}, #{memberNo}, 0, systimestamp)
+	</insert>
+</mapper>  
+
+
+
+

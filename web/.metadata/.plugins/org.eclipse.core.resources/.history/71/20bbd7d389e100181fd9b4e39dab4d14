@@ -1,0 +1,11 @@
+<%@page import="com.oreilly.servlet.MultipartRequest"%>
+<%@ page language="java" contentType="appication/json; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+<%
+	String root = request.getServletContext().getRealPath("");
+	String uploadPath = root + File.separator + "upload";
+	System.out.println(root);
+	//MultipartRequest mr = new MultipartRequest();
+%>
+{"src":"/upload/a.jpg"}

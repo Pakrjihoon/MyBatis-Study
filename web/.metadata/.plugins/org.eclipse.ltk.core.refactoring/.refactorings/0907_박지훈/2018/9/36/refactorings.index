@@ -1,0 +1,29 @@
+1536296812361	Delete elements
+1536297021112	Delete element
+1536297165175	Rename package 'vo'
+1536297424732	Rename package 'com.bjd.phonbook.config'
+1536297434377	Rename package 'com.bjd.phonbook.dao'
+1536297440661	Rename package 'com.bjd.phonbook.mapper'
+1536297447204	Rename package 'com.bjd.phonbook.servlet'
+1536297451658	Rename package 'com.bjd.phonbook.util'
+1536297459969	Rename package 'com.bjd.phonbook.vo'
+1536297550262	Rename resource 'groups.xml'
+1536297613257	Rename type 'GroupsDAO'
+1536297759606	Copy file
+1536297763251	Delete element
+1536297807031	Delete element
+1536297982031	Rename type 'HelloServlet'
+1536298734948	Copy file
+1536298739883	Delete element
+1536301735996	Move folder
+1536302453834	Delete element
+1536302460724	Delete element
+1536302639828	Rename type 'GroupsDAO'
+1536302648337	Rename type 'PhonebookDAO'
+1536302850101	Move 'lib' to 'WEB-INF'
+1536311041928	Delete element
+1536311251889	Encapsulate field 'regDate'
+1536313999883	Copy file
+1536314003702	Delete element
+1536314170761	Rename package 'com.bjd.phonebookmapper'
+1536315605962	Delete element

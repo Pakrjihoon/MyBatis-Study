@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="movies">
+	<select id="selectList" resultType="Movie">
+		SELECT no, name, director, release_date releaseDate, genre, audience_num audienceNum, end_date endDate
+		FROM movies
+		ORDER BY no
+	</select>
+	<delete id="delete" parameterType="int">
+		DELETE movies
+		WHERE no = #{no}
+	</delete>
+	<insert id="insert" parameterType="Movie">
+		INSERT INTO movies(no, name, release_date, end_date, director, audience_num, genre)
+		VALUES(movies_seq.nextval , #{name}, #{releaseDate}, #{endDate}, #{director}, #{audienceNum}, #{genre})
+	</insert>
+</mapper> 
+

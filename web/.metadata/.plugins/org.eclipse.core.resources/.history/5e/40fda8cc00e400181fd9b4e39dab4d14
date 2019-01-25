@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="users">
+
+	<insert id="insert" parameterType="User">
+	<selectKey order="BEFORE" keyProperty="uNo" resultType="int">
+		SELECT users_seq.nextval
+		FROM dual
+	</selectKey>
+	INSERT INTO users(u_no, profile_img, id, password, nickname, birth_date, gender, u_tier, email, regdate)
+	VALUES(#{uNo},#{profile},#{id},#{password},#{nickname},#{birthDate},#{gender},'B',#{email},systimestamp)
+	</insert>
+	
+	<select id="selectLogin" resultType="User" parameterType="User">
+		SELECT id, password, nickname, birth_date birthDate, gender, u_tier uTier, profile_img profileImg, regdate
+		FROM users
+		WHERE id=#{id} AND password=#{password}
+	</select>
+	
+	<select id="selectCheckId" resultType="int" parameterType="String">
+		SELECT COUNT(*)
+		FROM users
+		WHERE id=#{id}
+	</select>
+</mapper>  
+
+
+
+

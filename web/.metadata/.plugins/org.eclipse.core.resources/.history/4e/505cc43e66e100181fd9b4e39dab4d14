@@ -1,0 +1,8 @@
+<%@ page language="java" contentType="application/json; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+	//json view -> contentType= application/json
+	String id = request.getParameter("id");
+
+	
+%>

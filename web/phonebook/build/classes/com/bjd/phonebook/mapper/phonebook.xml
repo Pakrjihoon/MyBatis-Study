@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="phonebook">
+	<insert id="insert" parameterType="Phone">
+		INSERT INTO phonebook(no, name, phone, gender, birth_date, regdate, profile)
+		VALUES (phonebook_seq.nextval, #{name}, #{phone}, #{gender}, #{birthDate}, systimestamp, #{profile})
+	</insert>
+	<select id="selectList" resultType="Phone" parameterType="Page">
+		SELECT no, name, phone, gender, birthDate, regdate, profile 
+		FROM (SELECT no, name, phone, gender, birthDate, regdate, profile, rownum r
+				FROM (SELECT no, name, phone, gender, birth_date birthDate, regdate, profile FROM phonebook
+				ORDER BY no DESC))
+		WHERE r BETWEEN #{start} AND #{end}
+	</select>
+	
+	<select id="selectTotal" resultType="int">
+	SELECT COUNT(*)
+	FROM guestbook
+	</select>
+</mapper> 

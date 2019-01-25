@@ -1,0 +1,12 @@
+package com.hermes.hanbakwi.vo;
+
+import java.sql.Date;
+import java.sql.Timestamp;
+
+public class User {
+	private int uNo;
+	private String profileImg, id, password, nickname, gender, uTier;
+	private Date birthDate;
+	private Timestamp regDate;
+
+}

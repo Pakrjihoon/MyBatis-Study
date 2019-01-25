@@ -1,0 +1,1925 @@
+        #wrap {
+            position: relative;
+            width: 1080px;
+            height: auto;
+            margin: 30px auto 50px auto;
+        }
+
+        #wrapBox {
+            width: 300px;
+            height: 1000px;
+            position: relative;
+        }
+
+        #profileInfoBox {
+            position: relative;
+            width: 300px;
+            height: 250px;
+            box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        #profile {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            /*display: block;*/
+        }
+
+        #photoadd {
+            /*position: absolute;*/
+            display: none;
+            /*cursor: pointer;*/
+            background-color: #FF5252;
+        }
+
+        #profile img {
+            border-radius: 50px;
+            display: block;
+        }
+
+        #profile p {
+            margin-top: 15px;
+            position: absolute;
+            left: 15px;
+            line-height: 0.3;
+        }
+
+        .address {
+            margin-top: 15px;
+            position: absolute;
+            left: 15px;
+            top: 150px;
+        }
+
+        #address2 {
+            top: 180px;
+        }
+
+        .box_grade {
+            width: 140px;
+            height: 30px;
+            background: url(img/bg_star_170614_v2.png);
+            background-position: 0 -97px;
+            /*position: relative;*/
+            margin: auto;
+        }
+
+        .star_grade {
+            width: 0px;
+            height: 30px;
+            background: url(img/bg_star_170614_v2.png);
+            background-position: 0 -68px;
+            transition: .1s ease;
+        }
+
+        .box_btn {
+            width: 140px;
+            height: 30px;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .btn_grade {
+            width: 28px;
+            height: 30px;
+            position: absolute;
+            top: 0;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .btn_grade:nth-child(1) {
+            left: 0;
+        }
+
+        .btn_grade:nth-child(2) {
+            left: 28px;
+        }
+
+        .btn_grade:nth-child(3) {
+            left: 56px;
+        }
+
+        .btn_grade:nth-child(4) {
+            left: 81px;
+        }
+
+        .btn_grade:nth-child(5) {
+            left: 106px;
+        }
+
+        #scoreBox {
+            margin-top: 20px;
+            position: relative;
+            width: 300px;
+            height: 35px;
+            box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        #buttonBox {
+            position: relative;
+            width: 300px;
+            height: 70px;
+            box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            margin-top: 20px;
+            line-height: 70px;
+
+        }
+
+        .myPageBtn {
+            float: left;
+            font-size: 50px;
+            display: inline-block;
+            text-align: center;
+            cursor: pointer;
+
+        }
+
+        /*#bt1 {*/
+        /*width: 99px;*/
+        /*height: 70px;*/
+        /*border-right: 1px solid #424242;*/
+
+        /*}*/
+
+        #bt2 {
+            width: 149px;
+            height: 70px;
+            border-right: 1px solid #424242;
+
+        }
+
+        #bt3 {
+            width: 150px;
+            height: 70px;
+        }
+        #bt3:hover{
+            background-color: #40BEED ;
+            color:white;
+            transition: .2s ease;
+        }
+
+        #followBox {
+            margin-top: 20px;
+            position: relative;
+            width: 300px;
+            height: 40px;
+            box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        #follower {
+            position: absolute;
+            line-height: 40px;
+            font-size: 17px;
+            left: 30px;
+            color: #424242;
+        }
+
+        #follow {
+            position: absolute;
+            line-height: 40px;
+            font-size: 17px;
+            left: 170px;
+            color: #424242;
+        }
+
+        #menuBox {
+            margin-top: 30px;
+            position: relative;
+            width: 300px;
+            height: 530px;
+            box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        #menuBox ul {
+            font-size: 25px;
+            text-align: left;
+            line-height: 3;
+            cursor: pointer;
+        }
+
+        #menuBox li {
+            text-indent: 20px;
+        }
+
+        #menuBox li i {
+            vertical-align: middle;
+            font-size: 3px;
+        }
+
+        #menuBox li:hover {
+            background-color: #40BEED;
+            color: #fff;
+
+        }
+        .menuon{
+            background-color: #40BEED;
+            color: #fff;
+        }
+
+        #gradeWrapBox {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 750px;
+            height: 300px;
+            box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        #gradeWrapBox h3 {
+            margin-top: 30px;
+            margin-left: 30px;
+            font-size: 30px;
+        }
+
+        #gradeBox {
+            position: absolute;
+            width: 300px;
+            height: 200px;
+        }
+
+        #question {
+            position: absolute;
+            font-size: 30px;
+            top: 165px;
+            left: 300px;
+            cursor: pointer;
+        }
+
+        #sum {
+            font-size: 20px;
+            margin-left: 30px;
+            text-align: center;
+            line-height: 220px;
+        }
+
+        #tierBox {
+            position: absolute;
+            right: 0;
+            width: 375px;
+            height: 200px;
+        }
+
+        svg {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            top: 30px;
+            /*left:-150px;*/
+            /*background-color: transparent;*/
+            text-indent: -500px;
+        }
+
+        #tier {
+            position: absolute;
+            left:25px;
+            top: 130px;
+            font-size: 20px;
+        }
+
+        #tierReward {
+            position: absolute;
+            top: -40px;
+            left: 280px;
+            color: #424242;
+        }
+
+        #nextTier {
+            position: absolute;
+            font-size: 20px;
+            left: 150px;
+            top: 20px;
+        }
+
+        #bar {
+            position: absolute;
+            left: 350px;
+            bottom: 35px;
+            width: 1px;
+            height: 150px;
+            background-color: #424242;
+        }
+
+        .contentBox {
+            position: relative;
+            margin-top: 270px;
+            width: 750px;
+            min-height: 670px;
+            box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            display: none;
+
+        }
+
+        .contentBox > h3 {
+            font-size: 40px;
+            /*position: relative;*/
+            padding: 30px 0 20px 0px;
+            /*margin-left: 30px;*/
+            /*margin-top: 60px;*/
+            /*margin-bottom: 50px;*/
+            /*background-color: #424242;*/
+        }
+
+        .bar2 {
+            /*position: relative;*/
+            /*top: 10px;*/
+            margin-left: 30px;
+            margin-bottom: 30px;
+            width: 350px;
+            height: 10px;
+            background: #40BEED;
+        }
+
+        .menuBtn {
+            width: 400px;
+            height: 40px;
+            /*background-color: #424242;*/
+            display: inline-block;
+            margin-left: 25px;
+        }
+
+        .btn2 {
+            width: 200px;
+            height: 40px;
+            background: #E0E0E0;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            display: inline-block;
+            float: left;
+            text-align: center;
+            line-height: 40px;
+            text-decoration: none;
+            color: #424242;
+            box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+        }
+
+        .on {
+            background: #40BEED;
+            color: #fff;
+            transition: .2s ease;
+        }
+
+        #bookmark {
+        position: absolute;
+        top: 130px;
+        /*margin-left: 30px;*/
+        margin-bottom: 40px;
+
+        }
+
+        #like {
+        position: absolute;
+        top: 130px;
+        margin-left: 200px;
+        margin-bottom: 40px;
+
+        }
+
+        .contentlist {
+            width: 670px;
+            height: 150px;
+            position: relative;
+        }
+
+        #bookmarkList {
+            position: relative;
+            width: 670px;
+            min-height: 150px;
+            margin: 50px auto;
+
+        }
+
+        .bookmarkList_li {
+            width: 670px;
+            height: 150px;
+            /*background-color: beige;*/
+            display: inline-block;
+            box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            margin-bottom: 20px;
+        }
+
+        #bookmarkList li img {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 150px;
+            height: 130px;
+        }
+
+        .text2 {
+            position: absolute;
+            font-size: 17px;
+            left: 180px;
+            top: 20px;
+
+        }
+
+        .text3 {
+            position: absolute;
+            font-size: 17px;
+            left: 180px;
+            top: 60px;
+        }
+
+        .on2 {
+            /*display: none;*/
+        }
+
+        .likeList_li {
+            width: 670px;
+            height: 150px;
+            /*background-color: beige;*/
+            display: inline-block;
+            box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            margin-bottom: 20px;
+        }
+
+        #likeList {
+            position: relative;
+            width: 670px;
+            min-height: 150px;
+            margin: 50px auto;
+            display: none;
+        }
+
+        #likeList li img {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            width: 150px;
+            height: 130px;
+        }
+
+        .text22 {
+            position: absolute;
+            font-size: 17px;
+            left: 180px;
+            top: 20px;
+
+        }
+
+        .text33 {
+            position: absolute;
+            font-size: 17px;
+            left: 180px;
+            top: 60px;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+        input:checked + .slider {
+            background-color: #40BEED;
+        }
+
+        input:focus + .slider {
+            box-shadow: 0 0 1px #40BEED;
+        }
+
+        input:checked + .slider:before {
+            -webkit-transform: translateX(26px);
+            -ms-transform: translateX(26px);
+            transform: translateX(26px);
+        }
+
+        /* Rounded sliders */
+        .slider.round {
+            border-radius: 34px;
+        }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+
+        /* The switch - the box around the slider */
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+            left: 220px;
+            top: 40px;
+
+        }
+
+        /* Hide default HTML checkbox */
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        #cog {
+            position: absolute;
+            font-size: 20px;
+            color: #424242;
+            top: 8px;
+            left: 260px;
+        }
+
+        .removeBookmark {
+            position: absolute;
+            font-size: 25px;
+            left: 640px;
+            top: 5px;
+            cursor: pointer;
+        }
+
+        .removeLike {
+            position: absolute;
+            font-size: 25px;
+            left: 640px;
+            top: 5px;
+            cursor: pointer;
+        }
+
+        #tierIng {
+            position: absolute;
+            width: 260px;
+            height: 60px;
+            /*background-color: #FF5252;*/
+            top: 100px;
+            left: 90px;
+        }
+
+        #length {
+            width: 260px;
+            height: 10px;
+            background-color: #40BEED;
+            position: absolute;
+            top: 25px;
+        }
+
+        #startLength {
+            position: absolute;
+            top: 40px;
+            left: 0px;
+        }
+
+        #endLength {
+            position: absolute;
+            left: 210px;
+            top: 40px;
+        }
+
+        #tierImg {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            left: 50px;
+            top: -42px;
+            /*background-color: #42A5F5;*/
+
+        }
+
+        #tierImg img {
+            position: relative;
+            left: -15px;
+            top: -13px;
+        }
+
+        #tierImg label {
+            position: relative;
+            left: 20px;
+            top: 5px;
+        }
+
+        #addWorkBoxPopup {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -350px;
+            margin-top: -350px;
+            width: 700px;
+            min-height: 700px;
+            background-color: #bab9ba;
+            overflow: hidden;
+            z-index: 2;
+            display: none;
+
+        }
+
+        #addContents {
+            margin: auto;
+            width: 700px;
+            /*background-color:#FF5252;*/
+
+        }
+
+        .selectBox {
+            width: 200px;
+            height: 200px;
+            background-color: #9d7a6d;
+            border-radius: 5px;
+            margin-top: 30px;
+            margin-left: 19px;
+            display: inline-block;
+            cursor: pointer;
+
+        }
+
+        .selectBox img {
+            border-radius: 5px;
+        }
+
+        .mainPopup {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 1;
+            display: none;
+            top: 0;
+            left: 0;
+        }
+
+        #boxPopup {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -350px;
+            margin-top: -350px;
+            width: 700px;
+            min-height: 700px;
+            background-color: #bab9ba;
+            z-index: 3;
+            display: none;
+
+        }
+
+        #contents {
+            margin: auto;
+            width: 700px;
+
+        }
+
+        .imgSelectBox {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #9d7a6d;
+            border-radius: 5px;
+            background-size: 100%;
+            background-position: 100% 100%;
+            background-repeat: no-repeat;
+            cursor: pointer;
+
+        }
+
+        .imgSelectBox img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            /*margin-left: -25px;*/
+
+        }
+        .writeReview {
+            position: relative;
+            width: 750px;
+            min-height: 670px;
+            box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            margin-top: 270px;
+            display: none;
+
+        }
+
+        .writeReview ul {
+            text-align: center;
+        }
+
+        #reviewWrapbox{
+            position: absolute;
+            top: 30px;
+            left: 20px;
+        }
+
+        .myreviewBtn {
+            width: 130px;
+            height: 50px;
+            text-decoration: none;
+            font-size: 25px;
+            margin: 10px;
+            color: #424242;
+        }
+
+        #allWrap {
+            position: absolute;
+            width: 700px;
+            height: 300px;
+            /*background-color: #FFDE2F;*/
+            top: 100px;
+            left: 20px;
+            /*margin: auto;*/
+            /*display: none;*/
+
+        }
+
+        #allwWrap ul {
+            text-align: center;
+        }
+
+        #allWrap li {
+            /*position: absolute;*/
+            display: inline-block;
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 200px;
+            height: 300px;
+        }
+
+        #roomWrap {
+            position: absolute;
+            width: 700px;
+            height: 300px;
+            /*background-color: #FFDE2F;*/
+            top: 100px;
+            left: 20px;
+            /*margin: auto;*/
+            display: none;
+
+        }
+
+        #roomWrap ul {
+            text-align: center;
+        }
+
+        #roomWrap li {
+            /*position: absolute;*/
+            display: inline-block;
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 200px;
+            height: 300px;
+        }
+
+        #restaurentWrap {
+            position: absolute;
+            width: 700px;
+            height: 300px;
+            /*background-color: #FFDE2F;*/
+            top: 100px;
+            left: 20px;
+            /*margin: auto;*/
+            display: none;
+
+        }
+
+        #restaurentWrap ul {
+            text-align: center;
+        }
+
+        #restaurentWrap li {
+            /*position: absolute;*/
+            display: inline-block;
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 200px;
+            height: 300px;
+        }
+
+        #cultureWrap {
+            position: absolute;
+            width: 700px;
+            height: 300px;
+            /*background-color: #FFDE2F;*/
+            top: 100px;
+            left: 20px;
+            /*margin: auto;*/
+            display: none;
+
+        }
+
+        #cultureWrap ul {
+            text-align: center;
+        }
+
+        #cultureWrap li {
+            /*position: absolute;*/
+            display: inline-block;
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 200px;
+            height: 300px;
+        }
+
+        .card_one {
+            top: 0;
+            left: 0;
+        }
+
+        .card_two {
+            top: 0;
+            left: 200px;
+        }
+
+        .card_three {
+            top: 0;
+            left: 400px;
+        }
+
+        .cardPhoto{
+            /*position: absolute;*/
+            width: 180px;
+            height: 180px;
+            display: block;
+            background-color: #42A5F5;
+            margin: auto;
+            /*background-image: url(img/jul2.jpg);*/
+            background-size: cover;
+        }
+
+        .blah {
+            width: 140px;
+            height: 30px;
+            /*display: inline-block;*/
+            text-align: center;
+            margin: auto;
+            line-height: 30px;
+            /*background-color: #FFDE2F;*/
+        }
+        .reviewTab li {
+            width: 105px;
+            height: 40px;
+            border-bottom: 3px solid transparent;
+            display: inline-block;
+            float: left;
+            /*background-color:#FFDE2F ;*/
+            margin-right: 20px;
+            text-align: center;
+        }
+
+        .reviewTab li.on3 {
+            border-bottom-color: #40BEED;
+        }
+        .fundWrap {
+            position: relative;
+            margin-top: 270px;
+            width: 750px;
+            padding-bottom: 10px;
+            min-height: 670px;
+            box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            display: none;
+
+        }
+
+        .fundWrap > h3 {
+            font-size: 40px;
+            margin-left: 30px;
+            padding: 30px 0 20px 0px;
+        }
+
+        .fundBar {
+            /*position: relative;*/
+            /*top: 10px;*/
+            margin-left: 30px;
+            margin-bottom: 30px;
+            width: 350px;
+            height: 10px;
+            background: #40BEED;
+        }
+
+
+        .btn2 {
+            width: 200px;
+            height: 40px;
+            background: #E0E0E0;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            display: inline-block;
+            float: left;
+            text-align: center;
+            line-height: 40px;
+            text-decoration: none;
+            color: #424242;
+            box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .on {
+            background: #40BEED;
+            color: #fff;
+        }
+
+
+        .list {
+            width: 670px;
+            height: 150px;
+            position: relative;
+        }
+
+        .list span {
+            margin-left: 20px;
+            font-size: 30px;
+        }
+
+        #order {
+            position: absolute;
+            width: 130px;
+            height: 40px;
+            top: 190px;
+            right: 50px;
+
+        }
+
+        #myFundingWrap {
+            position: relative;
+            width: 670px;
+            min-height: 150px;
+            margin-left: 30px;
+            top: 30px;
+
+
+        }
+        #mySponWrap {
+            position: relative;
+            width: 670px;
+            min-height: 150px;
+            margin-left: 30px;
+            top: 30px;
+            display: none;
+
+        }
+
+        .List {
+            position: relative;
+            width: 670px;
+            min-height: 150px;
+            margin: 50px auto;
+        }
+
+        .List li {
+            width: 670px;
+            height: 150px;
+            /*background-color: beige;*/
+            display: inline-block;
+            box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            margin-bottom: 20px;
+        }
+
+
+        .fundPhoto {
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            background-image: url(img/paris.jpg);
+            background-size: cover;
+            margin: 5px;
+        }
+
+        .fundText2 {
+            position: absolute;
+            font-size: 20px;
+            top: 12px;
+            left: 160px;
+        }
+
+        .fundText3 {
+            position: absolute;
+            font-size: 15px;
+            top: 50px;
+            left: 160px;
+        }
+
+        .fundText4 {
+            position: absolute;
+            font-size: 20px;
+            top: 90px;
+            left: 160px;
+        }
+
+        .fundText5 {
+            position: absolute;
+            font-size: 20px;
+            top: 90px;
+            left: 430px;
+        }
+
+        .text6 {
+            position: absolute;
+            font-size: 15px;
+            top: 125px;
+            left: 580px;
+        }
+
+        .deadlinewrap {
+            position: absolute;
+            top: 10px;
+            left: 580px;
+        }
+
+        .deadline {
+            color: #fff;
+            text-align: center;
+            line-height: 40px;
+            width: 75px;
+            height: 60px;
+            background-color: #40BEED;
+            border-top-left-radius: 7px;
+            border-top-right-radius: 7px;
+            position: absolute;
+            line-height: 2;
+        }
+
+        .deadline::after {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-right: 50px solid transparent;
+            border-top: 20px solid #40BEED;
+            top: 60px;
+            left: 0;
+        }
+
+        .deadline::before {
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-top: 20px solid #40BEED;
+            top: 60px;
+            left: 25px;
+        }
+
+        #writeFunding {
+            position: absolute;
+            width: 120px;
+            height: 40px;
+            background-color: #40BEED;
+            text-decoration: none;
+            right: 50px;
+            border-radius: 5px;
+            color: #fff;
+            text-align: center;
+            font-size: 18px;
+            line-height: 40px;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+
+        }
+        .preWrap{
+            position: relative;
+            margin-top: 270px;
+            width: 750px;
+            min-height: 670px;
+            box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            display: none;
+
+        }
+        .preWrap>h3{
+            font-size: 40px;
+            margin-left: 30px;
+            padding: 30px 0 20px 0px;
+        }
+        .preBar{
+            /*position: relative;*/
+            /*top: 10px;*/
+            margin-left: 30px;
+            margin-bottom: 30px;
+            width: 350px;
+            height: 10px;
+            background: #40BEED;
+        }
+        #applyList{
+            display: none;
+        }
+
+        .a_List{
+            list-style: disc;
+            margin-top: 30px;
+            margin-left:60px;
+            font-size: 20px;
+
+        }
+        #myWriteList{
+            position: relative;
+            width: 670px;
+            min-height: 150px;
+            margin: 50px auto;
+            /*display: none;*/
+        }
+
+        .writeList span{
+            margin-left: 20px;
+            font-size: 20px;
+        }
+        .writeList i{
+            font-size: 10px;
+        }
+
+        .detail{
+            text-decoration: none;
+            color: #424242;
+        }
+
+        .infoBox{
+            margin-top: 20px;
+            width:670px; height:60px;
+            position: relative;
+            background-color: #E0E0E0;
+            margin-bottom: 30px;
+
+        }
+        .writePhoto{
+            position: absolute;
+            background-image: url(img/jul2.jpg);
+            width:50px;
+            height: 50px;
+            border-radius: 25px;
+            background-size: cover;
+            left:10px;
+            top:5px;
+
+        }
+        .writeNickName{
+            position: absolute;
+            top:10px;
+            left:70px;
+            font-weight: bold;
+
+        }
+        .writeBan{
+            position: absolute;
+            top:35px;
+            left:70px;
+        }
+        .writeKakao{
+            position: absolute;
+            top:20px;
+            left:400px;
+        }
+        .writeKakao,.writeMessage,.writeComplete{
+            display: inline-block;
+            width:80px;
+            height: 40px;
+            background-color: #40BEED;
+            position: absolute;
+            top: 10px;
+            text-align: center;
+            line-height: 40px;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .writeMessage{
+            right: 100px;
+        }
+        .writeComplete{
+            right: 10px;
+        }
+
+       .fa-ban{
+            color: red;
+        }
+        .writeList li i {
+            vertical-align: middle;
+            font-size: 3px;
+        }
+        .p_Wrap{
+            position: relative;
+            margin-top: 270px;
+            width: 750px;
+            min-height: 670px;
+            box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            display: none;
+
+        }
+        .p_Wrap>h3{
+            font-size: 40px;
+            margin-left: 30px;
+            padding: 30px 0 20px 0px;
+        }
+        .preBar{
+            /*position: relative;*/
+            /*top: 10px;*/
+            margin-left: 30px;
+            margin-bottom: 30px;
+            width: 350px;
+            height: 10px;
+            background: #40BEED;
+        }
+        #p_myWriteList {
+            position: relative;
+            width: 670px;
+            min-height: 150px;
+            margin: 50px auto;
+            /*display: none;*/
+        }
+
+
+        .p_writeList span {
+            margin-left: 20px;
+            font-size: 30px;
+        }
+
+        .p_infoBox {
+            margin-top: 20px;
+            width: 670px;
+            height: 60px;
+            position: relative;
+            background-color: #E0E0E0;
+            margin-bottom: 30px;
+        }
+
+        .p_writePhoto{
+            position: absolute;
+            background-image: url(img/jul.jpg);
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            background-size: cover;
+            left: 10px;
+            top: 5px;
+
+        }
+
+        .p_writeNickName {
+            position: absolute;
+            top: 10px;
+            left: 70px;
+            font-weight: bold;
+
+        }
+
+        .p_writeBan{
+            position: absolute;
+            top: 35px;
+            left: 70px;
+        }
+
+        .p_writeKakao,.p_writeMessage, .p_writeSelect, .p_writeComplete {
+            display: inline-block;
+            width: 80px;
+            height: 40px;
+            background-color: #40BEED;
+            position: absolute;
+            top: 10px;
+            text-align: center;
+            line-height: 40px;
+            color: #fff;
+            border-radius: 5px;
+        }
+        .p_writeKakao{
+            right: 280px;
+        }
+
+        .p_writeMessage {
+            right: 190px;
+        }
+
+        .p_writeSelect {
+            right: 100px;
+        }
+
+        .p_writeComplete {
+            right: 10px;
+        }
+
+        #p_myWriteList li i {
+            vertical-align: middle;
+            font-size: 3px;
+        }
+        #p_applyList{
+            display: none;
+        }
+        .p_List{
+            list-style: disc;
+            margin-top: 30px;
+            margin-left:60px;
+            font-size: 20px;
+
+        }
+        .d_wrap {
+            position: relative;
+            margin-top: 270px;
+            width: 750px;
+            min-height: 670px;
+            box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            display: none;
+
+        }
+
+        .d_wrap > h3 {
+            font-size: 40px;
+            margin-left: 30px;
+            padding: 30px 0 20px 0px;
+
+        }
+
+        .prebar {
+            /*position: relative;*/
+            /*top: 10px;*/
+            margin-left: 30px;
+            margin-bottom: 30px;
+            width: 350px;
+            height: 10px;
+            background: #40BEED;
+
+        }
+
+        /*.menuBtn {*/
+        /*width: 400px;*/
+        /*height: 40px;*/
+        /*!*background-color: #424242;*!*/
+        /*display: inline-block;*/
+        /*margin-left: 30px;*/
+
+        /*}*/
+
+        #d_order {
+            position: absolute;
+            width: 130px;
+            height: 40px;
+            top: 120px;
+            right: 40px;
+
+        }
+
+        #writeDiary {
+            position: absolute;
+            width: 150px;
+            height: 40px;
+            background-color: #40BEED;
+            text-decoration: none;
+            right: 40px;
+            border-radius: 5px;
+            color: #fff;
+            text-align: center;
+            font-size: 18px;
+            line-height: 40px;
+            box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+            top: 60px;
+
+        }
+
+
+        .d_list {
+            position: relative;
+            width: 670px;
+            height: 150px;
+            /*background-color: beige;*/
+            display: inline-block;
+            box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            margin-bottom: 20px;
+
+        }
+
+        .d_photo {
+            position: absolute;
+            width: 140px;
+            height: 140px;
+            background-image: url(img/paris.jpg);
+            background-size: cover;
+            margin: 5px;
+
+        }
+
+        .d_text2 {
+            position: absolute;
+            font-size: 20px;
+            top: 12px;
+            left: 160px;
+            font-weight: bold;
+
+        }
+
+        .d_text3 {
+            position: absolute;
+            font-size: 15px;
+            top: 55px;
+            left: 160px;
+            width: 500px;
+            height: 30px;
+            text-overflow: ellipsis;
+            word-break: break-all;
+            text-align: justify-all;
+            white-space: nowrap;
+            overflow: hidden;
+            /*background-color: #FFDE2F;*/
+        }
+
+        .diaryList {
+            position: relative;
+            width: 400px;
+            height: 36px;
+            top: -60px;
+            left: 180px;
+            white-space: nowrap;
+            overflow: hidden;
+
+        }
+
+        .diaryList .diary {
+            height: 36px;
+            /*background-color: #CDDC39;*/
+            display: inline-block;
+            position: relative;
+            padding-left: 10px;
+
+        }
+
+        .diaryList .border {
+            width: 10px;
+            height: 1px;
+            border-bottom: 2px solid #40BEED;
+            /*background-color: #E0E0E0;*/
+            position: absolute;
+            top: 17px;
+            left: 0px;
+
+        }
+
+        .diaryList .circle {
+            padding: 0 12px;
+            height: 34px;
+            background-color: #fff;
+            border-radius: 50px;
+            line-height: 34px;
+            font-size: 10px;
+            text-align: center;
+            position: relative;
+            color: #40BEED;
+            border: 1px solid #40BEED;
+
+        }
+
+        .diaryList .firstList {
+            padding-left: 0;
+            /*background-color: red;*/
+
+        }
+
+        .diaryList .firstList > .border {
+            left: 20px;
+            width: 80px;
+
+        }
+
+        /*#diaryList .finalList>.border{*/
+        /*right: 30px;*/
+        /*width: 80px;*/
+        /*}*/
+        /*#diaryList .moreList{*/
+        /*}*/
+        .title {
+            position: relative;
+            width: 670px;
+            min-height: 150px;
+            margin: auto;
+            margin-left: 20px;
+            top:20px;
+
+        }
+
+        .wordSign {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            font-size: 40px;
+            font-weight: bold;
+            background-color: transparent;
+            left: 620px;
+            top: -15px;
+            cursor: pointer;
+            z-index: 1;
+            border: none;
+            outline: none;
+            line-height: 40px;
+        }
+
+        .more {
+            /*padding:0 12px;*/
+            width: 34px;
+            height: 34px;
+            background-color: #fff;
+            border-radius: 50px;
+            line-height: 34px;
+            font-size: 10px;
+            text-align: center;
+            position: absolute;
+            color: #40BEED;
+            border: 1px solid #40BEED;
+            left: 620px;
+            top: 95px;
+
+        }
+
+        .show + .clickMore {
+            display: block;
+        }
+
+        /*.show #wrap .clickMore{*/
+        /*display: block;*/
+        /*}*/
+
+        .clickMore {
+            width: 60px;
+            height: 90px;
+            position: absolute;
+            top: 35px;
+            right: -10px;
+            border-radius: 2px;
+            border: none;
+            background: #ffffff;
+            box-shadow: 0 3px 8px 0 rgba(0, 0, 0, .16);
+            display: none;
+            z-index: 99;
+            text-align: center;
+        }
+
+        .clickMore::before {
+            content: "";
+            display: block;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid #fff;
+            position: absolute;
+            width: 0;
+            height: 0;
+            top: -9.4px;
+            right: 20px;
+
+        }
+
+        .clickMore::after {
+            content: "";
+            display: block;
+            border-left: 9px solid transparent;
+            border-right: 9px solid transparent;
+            border-bottom: 9px solid #ffffff;
+            position: absolute;
+            width: 0;
+            height: 0;
+            top: -8.4px;
+            right: 21px;
+        }
+
+        .clickMoreList li {
+            width: 60px;
+            height: 30px;
+            margin-top: 10px;
+            position: absolute;
+            /*background-color: #FF5252;*/
+            z-index: 10;
+        }
+        .udt {
+            top: 10px;
+        }
+        .del {
+            top: 40px;
+        }
+        .clickMoreList li a {
+            width: 60px;
+            /*padding: 10px;*/
+            text-decoration: none;
+            font-size: 20px;
+            color: #424242;
+        }
+        .clickMoreList li:hover {
+            background-color: #F5F5F5;
+        }
+        .popupAux {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        #pre_Wrap{
+            position: fixed;
+            width:100%;
+            height:100%;
+            left:0;
+            top:0;
+            background-color:rgba(0,0,0,.8);
+            display: none;
+        }
+        #pre_Popup{
+            position: fixed;
+            top:50%;
+            left: 50%;
+            width:900px;
+            height: 600px;
+            margin: -300px 0 0 -450px;
+            background: white;
+            box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+        }
+        #pre_Text1{
+            text-align: center;
+            font-size: 60px;
+            margin: 60px;
+        }
+        #pre_Text2{
+            text-align: center;
+            font-size: 20px;
+            margin: 70px auto;
+            width:500px;
+            line-height: 1.5;
+
+        }
+        #pre_Text3{
+            text-align: center;
+            font-size: 40px;
+
+        }
+        #pre_Complete{
+            /*position: absolute;*/
+            display: block;
+            color:white;
+            background-color: #40BEED;
+            width:100px;
+            height:50px;
+            font-size:20px;
+            border: none;
+            margin: 100px auto;
+            border-radius: 5px;
+        }
+        #pre_Complete:hover{
+            cursor: pointer;
+        }
+        #pre_Close{
+            position: absolute;
+            font-size: 50px;
+            border: none;
+            outline: none;
+            background-color: white;
+            top:15px;
+            right: 10px;
+            cursor: pointer;
+        }
+        .pre_box_grade {
+            width:206px;
+            height:42px;
+            background: url(img/bg_star_170614_v2.png);
+            background-position: 0 -208px;
+            position: relative;
+            left: 347px;
+            top: 50px;
+        }
+        .pre_star_grade {
+            width:0px;
+            height:42px;
+            background: url(img/bg_star_170614_v2.png);
+            background-position: 0 -168px;
+            transition: .1s ease;
+        }
+        .pre_box_btn {
+            width:206px;
+            height:42px;
+            position: absolute;
+            left:0;
+            top:0;
+        }
+        .pre_btn_grade {
+            width:41.2px;
+            height: 42px;
+            position: absolute;
+            top:0;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            outline: none;
+        }
+        .pre_btn_grade:nth-child(1) {
+            left:0;
+        }
+        .pre_btn_grade:nth-child(2) {
+            left:41.2px;
+        }
+        .pre_btn_grade:nth-child(3) {
+            left:82.4px;
+        }
+        .pre_btn_grade:nth-child(4) {
+            left:123.6px;
+        }
+        .pre_btn_grade:nth-child(5) {
+            left:164.8px;
+        }
+        #logoImage {
+            background-image: url("img/로고.png ");
+        }
+        .findingSight {
+            position: relative;
+            width: 750px;
+            min-height: 670px;
+            box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            margin-top: 270px;
+            display: none;
+
+        }
+
+        .findingSight  ul {
+            text-align: center;
+        }
+
+        #f_s_Wrapbox{
+            position: absolute;
+            top: 30px;
+            left: 20px;
+        }
+
+        .f_s_myreviewBtn {
+            width: 130px;
+            height: 50px;
+            text-decoration: none;
+            font-size: 25px;
+            margin: 10px;
+            color: #424242;
+        }
+
+        #f_s_allWrap {
+            position: absolute;
+            width: 700px;
+            height: 300px;
+            /*background-color: #FFDE2F;*/
+            top: 100px;
+            left: 20px;
+            /*margin: auto;*/
+            /*display: none;*/
+
+        }
+
+        #f_s_allWrap ul {
+            text-align: center;
+        }
+
+        #f_s_allWrap li {
+            /*position: absolute;*/
+            display: inline-block;
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 200px;
+            height: 300px;
+        }
+
+        #f_s_roomWrap {
+            position: absolute;
+            width: 700px;
+            height: 300px;
+            /*background-color: #FFDE2F;*/
+            top: 100px;
+            left: 20px;
+            /*margin: auto;*/
+            display: none;
+
+        }
+
+        #f_s_roomWrap ul {
+            text-align: center;
+        }
+
+        #f_s_roomWrap li {
+            /*position: absolute;*/
+            display: inline-block;
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 200px;
+            height: 300px;
+        }
+
+        #f_s_restaurentWrap {
+            position: absolute;
+            width: 700px;
+            height: 300px;
+            /*background-color: #FFDE2F;*/
+            top: 100px;
+            left: 20px;
+            /*margin: auto;*/
+            display: none;
+
+        }
+
+        #f_s_restaurentWrap ul {
+            text-align: center;
+        }
+
+        #f_s_restaurentWrap li {
+            /*position: absolute;*/
+            display: inline-block;
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 200px;
+            height: 300px;
+        }
+
+        #f_s_cultureWrap {
+            position: absolute;
+            width: 700px;
+            height: 300px;
+            /*background-color: #FFDE2F;*/
+            top: 100px;
+            left: 20px;
+            /*margin: auto;*/
+            display: none;
+
+        }
+
+        #f_s_cultureWrap ul {
+            text-align: center;
+        }
+
+        #f_s_cultureWrap li {
+            /*position: absolute;*/
+            display: inline-block;
+            margin-left: 10px;
+            margin-right: 10px;
+            width: 200px;
+            height: 300px;
+        }
+
+        .f_s_card_one {
+            top: 0;
+            left: 0;
+        }
+
+        .f_s_card_two {
+            top: 0;
+            left: 200px;
+        }
+
+        .f_s_card_three {
+            top: 0;
+            left: 400px;
+        }
+
+        .f_s_cardPhoto{
+            /*position: absolute;*/
+            width: 180px;
+            height: 180px;
+            display: block;
+            background-color: #42A5F5;
+            margin: auto;
+            /*background-image: url(img/jul2.jpg);*/
+            background-size: cover;
+            border-radius: 3px;
+        }
+
+        .f_s_blah {
+            width: 140px;
+            height: 30px;
+            /*display: inline-block;*/
+            text-align: center;
+            margin: auto;
+            line-height: 30px;
+            /*background-color: #FFDE2F;*/
+        }
+        .f_s_reviewTab li {
+            width: 105px;
+            height: 40px;
+            border-bottom: 3px solid transparent;
+            display: inline-block;
+            float: left;
+            /*background-color:#FFDE2F ;*/
+            margin-right: 20px;
+            text-align: center;
+        }
+
+        .f_s_reviewTab li.on3 {
+            border-bottom-color: #40BEED;
+        }
+        .fa-heart{
+            color: red;
+        }
+        #svg_12{
+            display: none;
+        }
+        #svg_13{
+            display: none;
+        }
+        #svg_16{
+            display: none;
+        }
+        #svg_17{
+            display: none;
+        }

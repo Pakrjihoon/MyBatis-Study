@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="servlet.LifeCycleServlet"/>
+<fullyQualifiedTypeName name="com.bjd.ims.vo.Idol"/>
+<fullyQualifiedTypeName name="com.bjd.ims.vo.Group"/>
+<fullyQualifiedTypeName name="javax.websocket.Session"/>
+<fullyQualifiedTypeName name="com.bjd.ims.util.SqlSessionUtil"/>
+<fullyQualifiedTypeName name="sun.security.x509.IPAddressName"/>
+<fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<fullyQualifiedTypeName name="org.pjh.guestbook.vo.Guest"/>
+<fullyQualifiedTypeName name="java.io.PrintWriter"/>
+<fullyQualifiedTypeName name="javax.servlet.Filter"/>
+<fullyQualifiedTypeName name="javax.servlet.annotation.WebFilter"/>
+<fullyQualifiedTypeName name="org.pjh.guestbook.vo.PageVO"/>
+<fullyQualifiedTypeName name="org.pjh.guestbook.util.SqlSessionUtil"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpServlet"/>
+<fullyQualifiedTypeName name="javax.servlet.annotation.WebServlet"/>
+<fullyQualifiedTypeName name="com.bjd.phonebook.vo.Phone"/>
+<fullyQualifiedTypeName name="com.bjd.phonebook.util.SqlSessionUtil"/>
+<fullyQualifiedTypeName name="com.bjd.phonebook.vo.PageVO"/>
+<fullyQualifiedTypeName name="java.util.Calendar"/>
+<fullyQualifiedTypeName name="com.bjd.book.vo.Book"/>
+<fullyQualifiedTypeName name="com.bjd.book.vo.PageVO"/>
+<fullyQualifiedTypeName name="com.bjd.book.util.SqlSessionUtil"/>
+<fullyQualifiedTypeName name="org.apache.catalina.User"/>
+<fullyQualifiedTypeName name="vo.User"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="vo.Genre"/>
+<fullyQualifiedTypeName name="dao.MoviesDAO"/>
+<fullyQualifiedTypeName name="vo.Movie"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
+<fullyQualifiedTypeName name="util.SqlSessionUtil"/>
+<fullyQualifiedTypeName name="java.sql.Date"/>
+<fullyQualifiedTypeName name="java.sql.Timestamp"/>
+<fullyQualifiedTypeName name="org.bjd.model1.vo.Member"/>
+<fullyQualifiedTypeName name="org.bjd.model1.util.SqlSessionUtil"/>
+</qualifiedTypeNameHistroy>

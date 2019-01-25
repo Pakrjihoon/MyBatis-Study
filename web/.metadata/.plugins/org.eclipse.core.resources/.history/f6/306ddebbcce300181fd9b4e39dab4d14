@@ -1,0 +1,137 @@
+<%@page import="org.bjd.model1.vo.Article"%>
+<%@page import="java.util.List"%>
+<%@page import="org.bjd.model1.dao.BoardDAO"%>
+<%@page import="org.bjd.model1.vo.PageVO"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%
+
+String pageStr = request.getParameter("page");
+//Default page number
+int pageNo = 1;
+if(pageStr!=null) {
+	pageNo = Integer.parseInt(pageStr);
+}//if end
+
+//한 페이지당 보여질 게시물 수
+int numPage = 3;
+PageVO pageVO = new PageVO(pageNo, numPage);
+List<Article> articles = BoardDAO.selectList(pageVO);
+
+%>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>MODEL1 게시판</title>
+<%@ include file="/WEB-INF/template/link.jsp" %>
+<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<%@ include file="/WEB-INF/template/header.jsp" %>
+<%--
+	header.jsp에서 loginMember라는 변수를 선언했기 대문에
+	header.jsp를 include하는 소스 이후로는
+	loginmember를 사용할 수 있습니다.
+--%>
+<% %>
+<div id="content">
+	<div class="aux">
+	<h2 class="title"><i class="far fa-list-alt"></i> 게시글 목록</h2>
+	<%if(articles.isEmpty()){ %>
+	<p class="no_article">
+		<i class="fas fa-skull-crossbones"></i> 아직 게시글이 없습니다.
+	</p>
+	<%} %>
+	<ul id="articleList">
+	<%for(Article article :articles) { %>
+		<li class="article">
+			<a href="/article.jsp?no=15">
+				<div class="card_user">
+					<img src="<%=article.getProfile() %>" width="100" />
+					<strong>테스터</strong>
+				</div>
+				<h3 class="title">
+				제목입니다.제목입니다.제목입니다.
+					제목입니다.제목입니다.제목입니다.
+					제목입니다.제목입니다.제목입니다.
+					제목입니다.제목입니다.제목입니다.
+					제목입니다.제목입니다.제목입니다.
+				</h3>
+				<time>20분 전</time>
+				<strong class="comment"><i class="fa fa-comment"></i> 21222</strong>
+				<span class="hit"><i class="fa fa-eye"></i> 100</span>
+				<div class="btn_like">
+					<i class="fas fa-heart"></i>
+					<i class="far fa-heart"></i>
+					<span class="screen_out">좋아요</span>
+					<strong class="num_like">1000</strong>
+				</div>
+			</a>
+		</li>
+		<li class="article">
+			<a href="/article.jsp?no=15>">
+				<div class="card_user">
+					<img src="/profile/profile.jpg" width="100" />
+					<strong>테스터</strong>
+				</div>
+				<h3 class="title">
+					제목입니다.제목입니다.제목입니다.
+					제목입니다.제목입니다.제목입니다.
+					제목입니다.제목입니다.제목입니다.
+					제목입니다.제목입니다.제목입니다.
+					제목입니다.제목입니다.제목입니다.
+				</h3>
+				<time>20분 전</time>
+				<strong class="comment"><i class="fa fa-comment"></i> 21222</strong>
+				<span class="hit"><i class="fa fa-eye"></i> 100</span>
+				<div class="btn_like like">
+					<i class="fas fa-heart"></i>
+					<i class="far fa-heart"></i>
+					<span class="screen_out">좋아요</span>
+					<strong class="num_like">1000</strong>
+				</div>
+			</a>
+		</li>
+		<%} %>
+	</ul>
+	<div class="paginate">
+		<!-- 이전 페이지 이동 :  비활성 -->
+		<span title="이전 페이지 없음"><i class="fa fa-chevron-left"></i></span>
+		<!-- 이전 페이지 이동 :  활성 -->
+		<a href='' title="이전 페이지로"><i class="fa fa-chevron-left"></i><span class="screen_out">이전 페이지</span></a>
+		<!-- 페이지들 -->
+		<a href="" title="1">1</a>
+		<a href="" title="2">2</a>
+		<strong title="현재 3페이지">3</strong>
+		<a href="" title="4">4</a>
+		<a href="" title="5">5</a>
+		<!-- 다음 페이지 이동 :  활성 -->
+		<a href='' title="다음 페이지로"><i class="fa fa-chevron-right"></i><span class="screen_out">다음 페이지</span></a>
+		<!-- 다음 페이지 이동 :  비활성 -->
+		<span title="다음 페이지 없음"><i class="fa fa-chevron-right"></i></span>
+	</div><!--//paginate-->
+	<% if(loginMember!=null) { %>
+	<div class="box_btn">
+		<a href="/writeForm.jsp" class="btn"><i class="fas fa-pen-nib"></i> 글쓰기</a>
+	</div>
+	<%} %>
+	</div><!--//aux -->
+</div><!--//content-->
+<%@ include file="/WEB-INF/template/footer.jsp" %>
+<script src="/js/jquery.js"></script>
+<script src="/js/fix-footer.js"></script>
+<%
+	// 만약 회원가입을 하자마자 index.jsp에 왔다면
+	// session에 msg라는 attribute가 들어가 있습니다.
+	String msg = (String)session.getAttribute("msg");
+	if(msg!=null) {
+		// 한번 썼으면 다시 지워야 함
+		session.removeAttribute("msg");
+%>
+<script>
+	alert("<%=msg%>");
+</script>
+<%} %>
+</body>
+</html>

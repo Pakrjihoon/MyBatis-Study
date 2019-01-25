@@ -1,0 +1,5 @@
+package org.bjd.model1.vo;
+
+public class Board {
+
+}

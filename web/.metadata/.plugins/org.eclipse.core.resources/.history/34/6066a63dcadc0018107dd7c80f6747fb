@@ -1,0 +1,290 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/kakao.font.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/default.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="img/logo.png"/>
+</head>
+<style>
+    #header h1 {
+        position: relative;
+        margin: auto;
+        width: 250px;
+    }
+    body {
+        background: #F5F6F7;
+    }
+
+    #content h2 {
+        text-align: center;
+        font-size: 32px;
+        font-weight: bold;
+        margin: 20px;
+
+    }
+
+    #joinBox {
+        width: 500px;
+        margin: auto;
+    }
+
+    #joinBox .row {
+        margin-top:20px;
+    }
+
+    #joinBox .label {
+        display: block;
+        font-size: 18px;
+        color: #666;
+        height: 20px;
+        line-height: 20px;
+        margin-bottom:10px;
+        font-weight:900;
+    }
+
+    #joinBox .msg {
+        color:#D32F2F;
+        padding-top:20px;
+        font-weight:500;
+    }
+    #joinBox .msg.ok {
+        color:#14BAB6;
+    }
+
+    #joinBox input {
+        border: none;
+        width: 456px;
+        height: 30px;
+        font-size: 21px;
+        font-family: 'Kakao', sans-serif;
+        font-weight: 500;
+        padding:15px 22px;
+        color: #606060;
+        transition: .2s ease;
+        z-index: 1;
+        outline: 1px solid #dadada;
+        position: relative;
+    }
+
+    #joinBox input:focus {
+        outline:2px solid #14bab6;
+    }
+
+
+    #joinBox #profile {
+        font-size: 15px;
+        cursor: pointer;
+        height: 30px;
+    }
+
+    #birthDate {
+        display: inline-block;
+        text-align: right;
+    }
+
+    #birthDate input {
+        width: 119px;
+    }
+
+    #birthDate label {
+        font-size: 21px;
+    }
+
+    #profileBox {
+        width:140px;
+        height:140px;
+        text-align: center;
+        font-size:140px;
+        position: relative;
+        color: #ddd;
+        border-radius: 140px;
+        display: block;
+        margin:auto;
+    }
+
+    #profileBox.no_image #profileImg {
+        display: none;
+    }
+
+    #profileBox label {
+        width: 40px;
+        height:40px;
+        position: absolute;
+        bottom:4px;
+        right:4px;
+        background: #9E9E9E;
+        font-size:20px;
+        line-height:40px;
+        text-align: center;
+        border-radius: 40px;
+        cursor: pointer;
+        color:#fff;
+        border:2px solid #fff;
+    }
+    #profileBox label:hover {
+        background: #14bab6;
+    }
+
+    #profileRow {
+        height:210px;
+        position: relative;
+    }
+
+    #profile {
+        display: none;
+    }
+
+    #profileImg {
+        width:140px;
+        height:140px;
+        position: absolute;
+        left:0;
+        top:0;
+        background: red;
+        border-radius: 140px;
+    }
+
+    #profileBox.no_image .delete {
+        display: none;
+    }
+
+    .delete {
+        width:24px;
+        height:24px;
+        border-radius: 24px;
+        text-align: center;
+        line-height:24px;
+        cursor: pointer;
+        position: absolute;
+        border: none;
+        outline: none;
+        right:8px;
+        top:8px;
+        background: #9E9E9E;
+        display: block;
+    }
+
+    .delete:hover {
+        background: #14bab6;
+        color:#fff;
+    }
+
+</style>
+<body>
+<div id="header">
+    <h1><a href="index.html"><img src="img/logo.png" width="40"/><strong>ODEL1</strong> Board</a></h1>
+</div>
+<div id="content">
+    <div class="aux">
+        <h2 class="title"><i class="fas fa-hat-wizard"></i> 회원가입 폼</h2>
+        <div id="joinBox">
+            <form method="post" action="">
+                <fieldset>
+                    <legend class="screen_out">회원가입폼</legend>
+                    <div class="row">
+                        <label class="label" for="id">아이디</label>
+                        <input id="id" name="id"
+                               autocomplete="off"
+                               placeholder="영어,숫자로 4~20자 입력"
+                               title="영어,숫자로 4~20자 입력"
+                               pattern="[\w]{4,20}"
+                               required/>
+                        <div class="msg id">아이디를 입력해주세요.</div>
+                    </div><!--//row-->
+                    <div class="row">
+                        <label class="label" for="nickname">별 명</label>
+                        <input id="nickname"
+                               required pattern="[ㄱ-힣|0-9]{1,10}"
+                               placeholder="10자 내로 한글,숫자 입력"
+                               title="10자 내로 한글,숫자 입력"
+                               name="nickname"/>
+                        <div class="msg nickname ok">좋은 별명입니다.</div>
+                    </div><!--//row-->
+                    <div class="row">
+                        <label class="label" for="pwd">비밀번호</label>
+                        <input type="password" id="pwd"
+                               required pattern="[\w]{4,32}"
+                               placeholder="4~32자로 입력"
+                               title="4~32자로 입력"
+                               name="pwd"/>
+                        <div class="msg pwd"></div>
+                    </div><!--//row-->
+                    <div class="row">
+                        <label class="label" for="confirm">비밀번호 확인</label>
+                        <input type="password" id="confirm"
+                               pattern="[\w]{4,32}"
+                               required placeholder="위와 동일하게 입력"
+                               title="위와 동일하게 입력"/>
+                        <div class="msg confirm"></div>
+                    </div><!--//row-->
+                    <div class="row">
+                        <span class="label" for="birthDate">생년월일</span>
+                        <p id="birthDate">
+                            <label>
+                                <input type="text" id="year" name="year"
+                                       maxlength="4"
+                                       title="태어난 년도를 입력"
+                                       placeholder="년(4자리)"/></label>
+                            <label>
+                                <input type="text" id="month" name="month"
+                                       maxlength="2"
+                                       title="태어난 월을 입력"
+                                       placeholder="월"/>
+                            </label>
+                            <label>
+                                <input type="text" id="date"
+                                       name="date"
+                                       title="태어난 일을 입력"
+                                       maxlength="2"
+                                       placeholder="일"/>
+                            </label>
+                        </p>
+                        <div class="msg birth"></div>
+                    </div><!--//row-->
+                    <div class="row" id="profileRow">
+                        <span class="label">프로필사진</span>
+                        <div id="profileBox" class="fas fa-user-circle no_image">
+                        <img src="profile/jw.jpg" width="140" height="140" id="profileImg"/>
+                        <label class="fas fa-camera">
+                            <input type="file" name="profile" id="profile"/>
+                        </label>
+                            <button type="button" class="delete fas fa-times"><span class="screen_out">삭제</span></button>
+                        </div><!-- //profileBox -->
+                        <div class="msg profile">zz</div>
+                    </div><!--//profileRow -->
+                    <div class="box_btn">
+                        <button class="btn" type="submit"><i class="fas fa-sign-in-alt"></i> 회원가입</button>
+                        <button class="btn" type="reset"><i class="fas fa-redo"></i> 초기화</button>
+                        <a class="btn" href="index.html"><i class="far fa-list-alt"></i> index으로</a>
+                    </div><!--//box_btn -->
+                </fieldset>
+            </form>
+        </div><!--// joinBox -->
+    </div>
+</div>
+<div id="footer">
+    <div id="policy">
+        <h4 class="screen_out">정책 및 약관</h4>
+        <ul>
+            <li><a href="">회사소개</a></li><!--
+         --><li><a href="">광고</a></li><!--
+         --><li><a href="">검색등록</a></li><!--
+         --><li><a href="">제휴제안</a></li><!--
+         --><li><a href="">이용약관</a></li><!--
+         --><li><a href=""><strong>개인정보이용약관</strong></a></li><!--
+         --><li><a href="">청소년보호정책</a></li><!--
+         --><li><a href="">고객센터</a></li>
+        </ul>
+    </div>
+    <address>&copy; 2018 <a href="">jbm.org</a></address>
+</div><!--// footer  -->
+<script src="js/jquery.js"></script>
+<script src="js/fix-footer.js"></script>
+</body>
+</html>
